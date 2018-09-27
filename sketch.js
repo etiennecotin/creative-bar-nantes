@@ -11,10 +11,6 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   parts.push(new Particule((width/2)+0, (height/2)+0));
-  parts.push(new Particule((width/2)+r, (height/2)+r));
-  parts.push(new Particule((width/2)-r, (height/2)-r));
-  parts.push(new Particule((width/2)+r, (height/2)-r));
-  parts.push(new Particule((width/2)-r, (height/2)+r));
 
   bars.push(new Bar((100), (300)))
   bars.push(new Bar((300), (200)))
@@ -38,7 +34,6 @@ function draw() {
         }
     }
     
-     
 }
 
   class Particule{
@@ -68,19 +63,25 @@ function draw() {
   class Bar{
     constructor(x , y) {
         this.pos = createVector(x, y);
+        this.song = 0;
     }
     update() {
         rect(this.pos.x, this.pos.y, l, l);
-        
     }
     inside() {
-        son.play();
+        this.song += 1;
+        console.log('song', this.song);
+        
+        if (this.song == 1) {
+            son.play();
+        }
         push();
         fill('#fae');
         rect(this.pos.x, this.pos.y, l, l);
         pop();
     }
     outside() {
+        this.song = 0;
         push();
         fill('#fff');
         rect(this.pos.x, this.pos.y, l, l);
