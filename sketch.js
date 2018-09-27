@@ -7,20 +7,25 @@ var parts = [];
 var r = 20;
 var l = 50;
 var bars = [];
+
 var personnes = [];
-var son;
+var name_bar = ['Sur Mesure', 'Peter McCool', 'Buck Mulligan\'s', 'Le Perrok'];
+var ouvertureBar;
+var ambiance;
+var decaps;
+var decaps2;
 
 function preload() {
-    son = loadSound('ouverture-bar.mp3');
+    ouvertureBar = loadSound('ouverture-bar.mp3');
+    ambiance = loadSound('bruit-ambiance.mp3');
+    decaps = loadSound('decapsuler.mp3');
+    decaps2 = loadSound('decapsuler-2.mp3');
 }
 
 function setup() {
+
     createCanvas(windowWidth, windowHeight);
     parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
-    parts.push(new Particule((width / 2) + r, (height / 2) + r));
-    parts.push(new Particule((width / 2) - r, (height / 2) - r));
-    parts.push(new Particule((width / 2) + r, (height / 2) - r));
-    parts.push(new Particule((width / 2) - r, (height / 2) + r));
 
     for (var i = 0; i < 50; i++) {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
@@ -48,7 +53,7 @@ function draw() {
         }
     }
 
-    
+
     for (var i = 0; i < personnes.length; i++) {
         personnes[i].update();
     }
@@ -56,8 +61,6 @@ function draw() {
     for (var i = 0; i < personnes.length; i++) {
         personnes[i].draw();
     }
-
-
 }
 
 class Particule {
@@ -69,38 +72,72 @@ class Particule {
     update() {
         push();
         this.pos.add(this.vit);
-        // if(mouseIsPressed) {
+
         this.mouse = createVector(mouseX, mouseY);
         this.vit = this.mouse.sub(this.pos).div(50);
-        // }
+
         ellipse(this.pos.x, this.pos.y, r);
         pop();
     }
     draw() {
 
-        // ellipse(this.pos.x, this.pos.y, 50);
-        // ellipse(this.pos.x, this.pos.y, 30);
     }
-
 }
 
-class Bar {
-    constructor(x, y) {
+  class Bar{
+    constructor(x , y, name) {
+
         this.pos = createVector(x, y);
+        this.song = 0;
+        this.ambiance = loadSound('bruit-ambiance.mp3');
+        this.ouvertureBar = loadSound('ouverture-bar.mp3');
+        this.decaps2 = loadSound('decapsuler-2.mp3');
+        this.decaps = loadSound('decapsuler.mp3');
+        this.text = name;
     }
     update() {
+        push();
+        textAlign(CENTER);
+        textSize(20);
+        fill(0, 102, 153);
+        text(this.text, this.pos.x+50, this.pos.y-10);
+        pop();
         rect(this.pos.x, this.pos.y, l, l);
-
+        
     }
     inside() {
-        son.play();
         push();
+        this.song += 1;
+        // console.log('song', this.song);
+        
+        if (this.song == 1) {
+            this.ouvertureBar.play();
+            this.ambiance.play();
+            this.ambiance.setVolume(0.5);
+        } else if(this.song%1450 == 0) {
+            this.ambiance.play();
+        } else if(this.song%150 == 0) {
+            var decaps_switch = Math.round(random(0, 10));
+            console.log(decaps_switch);
+            
+            if (decaps_switch%2 == 0) {
+                this.decaps.play();
+            } else {
+                this.decaps2.play();
+            }
+        }
+        
         fill('#fae');
         rect(this.pos.x, this.pos.y, l, l);
         pop();
     }
     outside() {
         push();
+        this.song = 0;
+        this.ambiance.stop();
+        this.ouvertureBar.stop();
+        this.decaps.stop();
+        this.decaps2.stop();
         fill('#fff');
         rect(this.pos.x, this.pos.y, l, l);
         pop();
