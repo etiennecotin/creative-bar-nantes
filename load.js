@@ -9,7 +9,7 @@
     function getData() {
 
         $.getJSON("./data.json", function (data) {
-            console.log(data)
+            return data;
         });
 
         // response.then(function (result) {
@@ -23,7 +23,6 @@
         //         data.results.forEach(function (bar) {
         //             array_bar.push(bar);
         //         });
-        //
         //
         //         if (page_token) {
         //             // setTimeout(2000)
