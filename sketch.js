@@ -102,8 +102,10 @@ class Particule {
         fill(0, 102, 153);
         text(this.text, this.pos.x+50, this.pos.y-10);
         pop();
+        push();
+        rectMode(CENTER);
         rect(this.pos.x, this.pos.y, l, l);
-        
+        pop();
     }
     inside() {
         push();
