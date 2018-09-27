@@ -176,7 +176,6 @@ class Personnes {
     }
 }
 
-
 function doubleClicked() {
 
 }
