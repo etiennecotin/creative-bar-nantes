@@ -9,11 +9,25 @@ var l = 50;
 var bars = [];
 
 var personnes = [];
-var name_bar = ['Sur Mesure', 'Peter McCool', 'Buck Mulligan\'s', 'Le Perrok'];
 var ouvertureBar;
 var ambiance;
 var decaps;
 var decaps2;
+
+
+
+// Create a new Mappa instance.
+// var mappa = new Mappa('Map-Provider', key);
+let myMap;
+let canvas;
+// Create a new Mappa instance using Leaflet.
+const mappa = new Mappa('Leaflet');
+const options = {
+    lat: 47.212305,
+    lng: -1.555840,
+    zoom: 16,
+    style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+};
 
 function preload() {
     ouvertureBar = loadSound('ouverture-bar.mp3');
@@ -24,33 +38,42 @@ function preload() {
 
 function setup() {
 
-    createCanvas(windowWidth, windowHeight);
+    canvas = createCanvas(windowWidth, windowHeight);
+
+    myMap = mappa.tileMap(options);
+    myMap.overlay(canvas);
+
     parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
 
     for (var i = 0; i < 50; i++) {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
     }
-
-    bars.push(new Bar((100), (300), name_bar[0]));
-    bars.push(new Bar((300), (200), name_bar[1]));
-    bars.push(new Bar((500), (300), name_bar[2]));
-    bars.push(new Bar((700), (600), name_bar[3]));
+    data.then(function(dataResult) {
+        dataResult.results.forEach(function (element) {
+            let lat = parseFloat(element.geometry.location.lat);
+            let lng = parseFloat(element.geometry.location.lng);
+            let name = element.name;
+            bars.push(new Bar(lat, lng, name));
+        })
+    });
 }
 
 function draw() {
-    background(0);
+    // background(0);
+    clear();
+
 
     for (var i = 0; i < bars.length; i++) {
         bars[i].update();
-        for (var j = 0; j < parts.length; j++) {
-            parts[j].update();
+        // for (var j = 0; j < parts.length; j++) {
+            parts[0].update();
             // console.log(parts[j].pos.dist(bars[i].pos));
-            if (dist(bars[i].pos.x, bars[i].pos.y, parts[j].pos.x, parts[j].pos.y) < 50) {
+            if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < 50) {
                 bars[i].inside();
             } else {
                 bars[i].outside();
             }
-        }
+        // }
     }
 
 
@@ -87,7 +110,12 @@ class Particule {
   class Bar{
     constructor(x , y, name) {
 
-        this.pos = createVector(x, y);
+        this.pos = {
+            'x' : x,
+            'y' : y
+        }
+        // this.pos = createVector(x, y);
+        this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         this.song = 0;
         this.ambiance = loadSound('bruit-ambiance.mp3');
         this.ouvertureBar = loadSound('ouverture-bar.mp3');
@@ -96,13 +124,14 @@ class Particule {
         this.text = name;
     }
     update() {
+        this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         push();
         textAlign(CENTER);
         textSize(20);
         fill(0, 102, 153);
-        text(this.text, this.pos.x+50, this.pos.y-10);
+        text(this.text, this.coor.x+50, this.coor.y-10);
         pop();
-        rect(this.pos.x, this.pos.y, l, l);
+        rect(this.coor.x, this.coor.y, 20, 20);
         
     }
     inside() {
@@ -128,7 +157,7 @@ class Particule {
         }
         
         fill('#fae');
-        rect(this.pos.x, this.pos.y, l, l);
+        rect(this.coor.x, this.coor.y, l, l);
         pop();
     }
     outside() {
@@ -139,7 +168,7 @@ class Particule {
         this.decaps.stop();
         this.decaps2.stop();
         fill('#fff');
-        rect(this.pos.x, this.pos.y, l, l);
+        rect(this.coor.x, this.coor.y, l, l);
         pop();
     }
   }
