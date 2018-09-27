@@ -9,6 +9,7 @@ var l = 50;
 var bars = [];
 
 var personnes = [];
+var music = ['Alan Walker - Fade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3','GALA - Freed from desire.mp3','Jain - Alright.mp3','Le Wanski - Bella Ciao.mp3','Lost Temple - Panda Dub.mp3','Martin Garrix  Brooks - Like I Do.mp3','MC Fioti - Bum Bum Tam Tam.mp3','OrelSan - San.mp3','White Town - Your Woman.mp3']
 var name_bar = ['Sur Mesure', 'Peter McCool', 'Buck Mulligan\'s', 'Le Perrok'];
 var ouvertureBar;
 var ambiance;
@@ -25,6 +26,7 @@ function preload() {
 function setup() {
 
     createCanvas(windowWidth, windowHeight);
+    rectMode(CENTER);
     parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
 
     for (var i = 0; i < 50; i++) {
@@ -45,7 +47,7 @@ function draw() {
         for (var j = 0; j < parts.length; j++) {
             parts[j].update();
             // console.log(parts[j].pos.dist(bars[i].pos));
-            if (dist(bars[i].pos.x, bars[i].pos.y, parts[j].pos.x, parts[j].pos.y) < 50) {
+            if (dist(bars[i].pos.x, bars[i].pos.y, parts[j].pos.x, parts[j].pos.y) < 40) {
                 bars[i].inside();
             } else {
                 bars[i].outside();
@@ -103,7 +105,6 @@ class Particule {
         text(this.text, this.pos.x+50, this.pos.y-10);
         pop();
         push();
-        rectMode(CENTER);
         rect(this.pos.x, this.pos.y, l, l);
         pop();
     }
