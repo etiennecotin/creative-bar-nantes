@@ -1,3 +1,7 @@
+
+
+var data = getData();
+
 var p;
 var parts = [];
 var r = 20;
@@ -87,3 +91,11 @@ function draw() {
         pop();
     }
   }
+
+function doubleClicked() {
+
+}
+
+function mouseReleased() {
+
+}
