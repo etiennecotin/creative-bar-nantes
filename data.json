@@ -1,0 +1,1897 @@
+{
+    "results": [
+    {
+        "formatted_address": "Place du Bouffay, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2149367,
+                "lng": -1.552901
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21627652989272,
+                    "lng": -1.551600020107278
+                },
+                "southwest": {
+                    "lat": 47.21357687010727,
+                    "lng": -1.554299679892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "195104db01340b5825197485f10188f7d34230be",
+        "name": "Bar le Bouffay",
+        "photos": [
+            {
+                "height": 1365,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100288101559412273295/photos\">Jinks Kunst</a>"
+                ],
+                "photo_reference": "CmRaAAAAVRV2OFBSLU5nF77T7jU9M8SaPedscttQjXforXFwODkPZKu9JzZvlMb0s0_WTWKDHjAPUVUqARSc9JR6z7Iu7HIuVJWYpjp7GSq_WE-fh_9cgvoNLQSwoB7qhF7q79V7EhDlnOo3clcAgCoE6UtPygcMGhTHYy-xfoTVmVs64O-bJ4-wPfx5RQ",
+                "width": 2048
+            }
+        ],
+        "place_id": "ChIJK0uDvqXuBUgRhL6HsUSIpWg",
+        "plus_code": {
+            "compound_code": "6C7W+XR Nantes",
+            "global_code": "8CVW6C7W+XR"
+        },
+        "rating": 3.9,
+        "reference": "ChIJK0uDvqXuBUgRhL6HsUSIpWg",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "10 Quai François Mitterrand, 44200 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2078372,
+                "lng": -1.5593291
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.20918702989272,
+                    "lng": -1.557979270107278
+                },
+                "southwest": {
+                    "lat": 47.20648737010728,
+                    "lng": -1.560678929892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "id": "178107f77af1841fdf740f8393732b4a980fcbde",
+        "name": "Au Bureau Nantes",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 2863,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108230704151855674362/photos\">Pub Au Bureau</a>"
+                ],
+                "photo_reference": "CmRaAAAAIZPhL1iFUYza6xufCfFLr6yKAZsyPEYvCAlTv3-gWz7yFwQ8vM7664HFDS1V9xjageMuFQueSKNnOWGheV17eHNCmf597RwQuFqtPRCjiccNaRVzh4eekFTFDpBwEL-iEhCArEUURMT9T_MwJ4o7oRABGhT-xgqrJ2G9XsZITaET8tI0nUIGsA",
+                "width": 3704
+            }
+        ],
+        "place_id": "ChIJiTbp3AHsBUgRsA4pzwbWwB8",
+        "plus_code": {
+            "compound_code": "6C5R+47 Nantes",
+            "global_code": "8CVW6C5R+47"
+        },
+        "rating": 3.6,
+        "reference": "ChIJiTbp3AHsBUgRsA4pzwbWwB8",
+        "types": [
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "3 Rue de la Juiverie, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2156853,
+                "lng": -1.5526564
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21703882989272,
+                    "lng": -1.551308920107278
+                },
+                "southwest": {
+                    "lat": 47.21433917010727,
+                    "lng": -1.554008579892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "b09eee78a0e71094ce3d58cb304d13db5ef961c1",
+        "name": "KITKAT Bar",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2268,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111505481539561476448/photos\">정기영</a>"
+                ],
+                "photo_reference": "CmRaAAAA-lhZ_GtSnnKjX-5k3_Ht1pgE7tdpyJwW7wSCXB_vwAe9fouKu1UluHQzEBtgdmcD-vNmaXncPl34Hp0lj1pKXSNJXzo46IA6y5cJT28MaKECj6hWXnNiN7xz1KB0ZtuMEhAFqklr0sFKfWUWm0fDSN4AGhQ58eSoAMwOejU350rtVCxTfAS-mQ",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJWYizq6XuBUgRcY4A0wf6fXA",
+        "plus_code": {
+            "compound_code": "6C8W+7W Nantes",
+            "global_code": "8CVW6C8W+7W"
+        },
+        "rating": 4.3,
+        "reference": "ChIJWYizq6XuBUgRcY4A0wf6fXA",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "26 bis rue scribe, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2140736,
+                "lng": -1.5626893
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21542342989273,
+                    "lng": -1.561339470107278
+                },
+                "southwest": {
+                    "lat": 47.21272377010728,
+                    "lng": -1.564039129892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "394f66e95a9c91c302a31fb2dbd2b03a5880e78f",
+        "name": "Monsieur Roger",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3811,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103720376963990912766/photos\">Monsieur Roger</a>"
+                ],
+                "photo_reference": "CmRaAAAAyI5Hk4UJ4CcPt4cSuCE4FnamsiSzNCHitcLWGN20jy2F7QHBZDQx8NA9FLLmQteJdc_672D7XzwvLwWjc3tR7glY8YClpqXkeFZr6nD3JUeJI7sqwaQ3111OuR7tg_e8EhCcBz6Nz0LegZo2_zP696d9GhTu8ygm7Jx6PXzZo3Fi6XQb8AfYtg",
+                "width": 5184
+            }
+        ],
+        "place_id": "ChIJyX2LJx3sBUgRvezHoFqSKRY",
+        "plus_code": {
+            "compound_code": "6C7P+JW Nantes",
+            "global_code": "8CVW6C7P+JW"
+        },
+        "rating": 3.8,
+        "reference": "ChIJyX2LJx3sBUgRvezHoFqSKRY",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "19 Allée Baco, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2132939,
+                "lng": -1.5503737
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21468862989273,
+                    "lng": -1.549076170107278
+                },
+                "southwest": {
+                    "lat": 47.21198897010728,
+                    "lng": -1.551775829892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "5424dc7a755a9780d1cd7491dfbdc4bf4ab6f2a2",
+        "name": "Le Délirium Café",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 2160,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108525049266380659172/photos\">Rémi Ruiz</a>"
+                ],
+                "photo_reference": "CmRaAAAAIau-fToIR6aQYywfCSMtZpyvfrsNlN9gnFDJlZrW_g-j20DEQlD6ErhzAwN7Tz0Cj06ug8HU5HI27CkmFXDarx_RHyMCauJw9BG7wfOupcTYXxiV2HRMd9-WVSoaiS9TEhA6Chh8skPeFwWW796mLDMpGhQzL2LmCI8AK2W55TYfNScWeUrUXw",
+                "width": 3840
+            }
+        ],
+        "place_id": "ChIJsYwE96_uBUgRoSb2C8QnM8E",
+        "plus_code": {
+            "compound_code": "6C7X+8V Nantes",
+            "global_code": "8CVW6C7X+8V"
+        },
+        "rating": 4.4,
+        "reference": "ChIJsYwE96_uBUgRoSb2C8QnM8E",
+        "types": [
+            "bar",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "5 Rue Santeuil, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2132894,
+                "lng": -1.5603817
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21430412989272,
+                    "lng": -1.5573382
+                },
+                "southwest": {
+                    "lat": 47.21160447010728,
+                    "lng": -1.5613962
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "38d1d30df18c48cc93424a4053358f65a48fc226",
+        "name": "Le Charly's Bar",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2553,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100414981415722223006/photos\">Le Charly&#39;s Bar</a>"
+                ],
+                "photo_reference": "CmRaAAAAszI41_MCT7-muvKRZpK8CKFaI6WHj-_ZxZjl9LqPWhiNmtpdd4Evuua0npYzPQ6fNbFOokhNY_tBiH7OFW4VnMntWxqEJhcutB4OTuTRdseDxuMFqu33R_6x2S6blQyjEhDf7HHJeDOyueZuo-Ggww7WGhQgsxc99OysRWVFbr57Ql5eYo_38Q",
+                "width": 3145
+            }
+        ],
+        "place_id": "ChIJEXJPrQLsBUgR_O7reoHQpg8",
+        "plus_code": {
+            "compound_code": "6C7Q+8R Nantes",
+            "global_code": "8CVW6C7Q+8R"
+        },
+        "rating": 4.1,
+        "reference": "ChIJEXJPrQLsBUgR_O7reoHQpg8",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "35 Rue des Olivettes, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.21063179999999,
+                "lng": -1.5491097
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21196452989272,
+                    "lng": -1.547826670107278
+                },
+                "southwest": {
+                    "lat": 47.20926487010728,
+                    "lng": -1.550526329892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "db7f8a825b84ccd429a92e2d583e1e7ad1fa4616",
+        "name": "Zygobar",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116717921891135537734/photos\">Slimane NordPlus59</a>"
+                ],
+                "photo_reference": "CmRaAAAAbvP_Yaj0yj-Ee0VWqAsvM1ttQW-tAwzvCJCt7lW58PS9dPwUhyzeae3Ry8xFyfjem8GmndHDhddLl2-n_ZJCzrPR3NOg7ylLO1MNX4fyaZyci7MZ33P41bGrWYpG62eQEhBe-LwCmwepSVA9V9RAyqPgGhTGlVLIN7IcNuqpmMXArN6bKcF3VA",
+                "width": 3024
+            }
+        ],
+        "place_id": "ChIJXT4417HuBUgR999rsypNqoE",
+        "plus_code": {
+            "compound_code": "6F62+79 Nantes",
+            "global_code": "8CVW6F62+79"
+        },
+        "rating": 4.6,
+        "reference": "ChIJXT4417HuBUgR999rsypNqoE",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "8 Rue Guépin, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2165399,
+                "lng": -1.5587659
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21789417989272,
+                    "lng": -1.557483670107278
+                },
+                "southwest": {
+                    "lat": 47.21519452010727,
+                    "lng": -1.560183329892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "e2d4ef1eadc30da864cf966af86f14fda16b4538",
+        "name": "Le Narcisse",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 4096,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109785891604194045151/photos\">Julie GUEGUEN</a>"
+                ],
+                "photo_reference": "CmRaAAAA6J1nwaXLDbmC2Shm24VsaaH3SeBAtWbkkkFNfHGNQHJBiV5hWVzaYnz7IYeboeBbFZs_6Y8N_0c5GfiehccWcyeXKqVqBWIE7Lusw72ielPnW1iUcvjglDX2_D-0rxCBEhA6TOCggBjiM292bWhTLY_1GhRty4NPCyqNV8VK5wvce2VjJLMn9Q",
+                "width": 2296
+            }
+        ],
+        "place_id": "ChIJ_YcJEqfuBUgRQhr8wspaSA8",
+        "plus_code": {
+            "compound_code": "6C8R+JF Nantes",
+            "global_code": "8CVW6C8R+JF"
+        },
+        "rating": 4.4,
+        "reference": "ChIJ_YcJEqfuBUgRQhr8wspaSA8",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "7 Rue de la Baclerie, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.215207,
+                "lng": -1.55337
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21655647989272,
+                    "lng": -1.552020670107278
+                },
+                "southwest": {
+                    "lat": 47.21385682010728,
+                    "lng": -1.554720329892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "ba7915abf5e30f32f6b4e0de00e3abc328b35f60",
+        "name": "Prohibition",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3744,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106572744757440550240/photos\">Prohibition</a>"
+                ],
+                "photo_reference": "CmRZAAAAagIAprGULYGbrkP7RL5y9agc3EQJ9oCHlKlZY633C_nX3gKgvNlNOOOay2xbQWZkeZTSx3NPiXEpeJr31-JoI_6gzLHJcLGFlgI78u6sv6RL4JGD2m1hHxiwI9Qds8-TEhD9mWvXR--TjRu_rTSo9Fc0GhQKEk2dEjSVxKHr7Hp3YhpzVIGvBg",
+                "width": 5616
+            }
+        ],
+        "place_id": "ChIJt9-YuaXuBUgRLYlJdl_OPt4",
+        "plus_code": {
+            "compound_code": "6C8W+3M Nantes",
+            "global_code": "8CVW6C8W+3M"
+        },
+        "rating": 3.6,
+        "reference": "ChIJt9-YuaXuBUgRLYlJdl_OPt4",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "3 Rue du Bouffay, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2148787,
+                "lng": -1.5540899
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21624892989272,
+                    "lng": -1.552742420107278
+                },
+                "southwest": {
+                    "lat": 47.21354927010728,
+                    "lng": -1.555442079892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "5f535b0097d68c086f29687140ed27983ade7cb3",
+        "name": "Le Rabelais",
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115340253422573925844/photos\">A Google User</a>"
+                ],
+                "photo_reference": "CmRaAAAAg6JK6BrcYsw8kaCuFDpjjkzrxV4wE2clMcrvm1MzVP7ortxHfRI99wZU0Uk8hBEemKmYYOsfud9FFjDv3AcI6QCu82obAlHZ65qY1mVZNYdYAo3HdY8tGKy0HY-JdEClEhDbd8l-pavZEn8PPwHkE-INGhSLwhmg9gwRF6fHkWBPo6oD-l2i8Q",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJP_tbwqXuBUgReWPCfxsHNrQ",
+        "plus_code": {
+            "compound_code": "6C7W+X9 Nantes",
+            "global_code": "8CVW6C7W+X9"
+        },
+        "rating": 4,
+        "reference": "ChIJP_tbwqXuBUgReWPCfxsHNrQ",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "2 Rue Léon Maître, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2139804,
+                "lng": -1.5534966
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21537022989272,
+                    "lng": -1.552152770107278
+                },
+                "southwest": {
+                    "lat": 47.21267057010728,
+                    "lng": -1.554852429892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "a4adbef5aae3f38b5328bfcd66a5fdaea4ea6c4f",
+        "name": "Le Poulp'",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 1448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106816913027444899891/photos\">Le Poulp&#39;</a>"
+                ],
+                "photo_reference": "CmRaAAAAhYeRpm08MuENt-v7D6vne54tQjdR5as0LfTeUn5mz01nlnp10Pv3X5JOVFJ5eYjREGqAr3l9xTOyZMw_KFde2DdUftYQ1StFqU-KSXiGSxlIOFh9Yfl-YbPbZvzgfRklEhDhccr4WGNkFS2hm-pxp2AnGhRzAO_bC4rOH6YpQB9zn-r6JVaWPw",
+                "width": 2048
+            }
+        ],
+        "place_id": "ChIJVVUhjaXuBUgRur5XznuWkwE",
+        "plus_code": {
+            "compound_code": "6C7W+HJ Nantes",
+            "global_code": "8CVW6C7W+HJ"
+        },
+        "rating": 4.5,
+        "reference": "ChIJVVUhjaXuBUgRur5XznuWkwE",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "15 Rue Beauregard, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2148797,
+                "lng": -1.5552662
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21621472989272,
+                    "lng": -1.553905970107278
+                },
+                "southwest": {
+                    "lat": 47.21351507010728,
+                    "lng": -1.556605629892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "8721c65296f0b857842268633efc9c8bb2fc2b67",
+        "name": "Le Sur-Mesure",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110367987273596372143/photos\">Adrien Tesio</a>"
+                ],
+                "photo_reference": "CmRaAAAAz6EiTfMYYoWts2plZXCCNkqHK1YegMmoLfD7cn83Y-E5chGYxeRHa40jDulMGViLPt2c7TAuYa_UNPODwGjS1GkLS3AY8r78oKOOifm25mp5Go_vP7cFP7FLzpVtu4AqEhDrvkaWy_YtLZ_mdNx_skr8GhSehKF4ue8mx8yBc2E77xJ8Sudg4Q",
+                "width": 3264
+            }
+        ],
+        "place_id": "ChIJ53DhYKTuBUgRpJvRHHIcJQg",
+        "plus_code": {
+            "compound_code": "6C7V+XV Nantes",
+            "global_code": "8CVW6C7V+XV"
+        },
+        "rating": 4.6,
+        "reference": "ChIJ53DhYKTuBUgRpJvRHHIcJQg",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "Rue de l'Arche Sèche, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2149566,
+                "lng": -1.5584585
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21631652989272,
+                    "lng": -1.557037020107278
+                },
+                "southwest": {
+                    "lat": 47.21361687010727,
+                    "lng": -1.559736679892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+        "id": "4f02d88b7583d2e145899a623f5d3f304392e126",
+        "name": "Le Royal Café",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 4160,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/101417722145411382197/photos\">Lénou S</a>"
+                ],
+                "photo_reference": "CmRaAAAAnNI7QwH6UadOb8dCsxlWREGJdzC17mimRFAHEKwbu9u02Dp4jmS-PP6r2bVW8wbB2ScumfrL52cI55tzRy45leFv7udJIS6l5wAsLRYKpYp8SMllRVQnCIAppMn3pFSVEhBLTn2BqU0t80wuK6ehyWV-GhTCtbXumvwPY0SyGKVv-1YYw4uMaw",
+                "width": 3120
+            }
+        ],
+        "place_id": "ChIJPVkZo6fuBUgR9M2VTI-ckxQ",
+        "plus_code": {
+            "compound_code": "6C7R+XJ Nantes",
+            "global_code": "8CVW6C7R+XJ"
+        },
+        "rating": 3.7,
+        "reference": "ChIJPVkZo6fuBUgR9M2VTI-ckxQ",
+        "types": [
+            "cafe",
+            "bar",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "Tour de Bretagne, Place de Bretagne, 44047 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2177146,
+                "lng": -1.5582339
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21906442989272,
+                    "lng": -1.556884070107278
+                },
+                "southwest": {
+                    "lat": 47.21636477010728,
+                    "lng": -1.559583729892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "438461507deafc3a9a42d602f7a6975620f22da7",
+        "name": "Le Nid",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2322,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114873235509678001493/photos\">Fabrice mustang70</a>"
+                ],
+                "photo_reference": "CmRaAAAA_DgdcrIhOYsYhtSzc8qGGMFSthDNternBDKsu0uCVL6GK6ejn1fPAWfaNMSjc2AGagbwkv0X-Iua2fMoZ_Ga2FqYrjW3_it73bGgzFhBGcQg8kdJePZv52_n-1SiZqfjEhDbSVPksKcOEQEfzawSjTuSGhQgtCFa_lHm4s85e6sKVOBs60WlCw",
+                "width": 4128
+            }
+        ],
+        "place_id": "ChIJAbKSMKfuBUgRsWtX8ZZh0nc",
+        "plus_code": {
+            "compound_code": "6C9R+3P Nantes",
+            "global_code": "8CVW6C9R+3P"
+        },
+        "rating": 4.3,
+        "reference": "ChIJAbKSMKfuBUgRsWtX8ZZh0nc",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "9 Rue de l'Héronnière, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.211993,
+                "lng": -1.561813
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21334862989273,
+                    "lng": -1.560471420107278
+                },
+                "southwest": {
+                    "lat": 47.21064897010728,
+                    "lng": -1.563171079892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "1484a110dec699c248785a60e629f90c09283073",
+        "name": "Melocotton",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 2519,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104065278918812405396/photos\">Melocotton</a>"
+                ],
+                "photo_reference": "CmRaAAAAN15KuePdyugnRTel7zaYECvJo3rU64P_geYVD7DASxX0Dh1mT0UUZ3I8_o-X_Jq_PCql9q9aONEDbg1qNfHNazezAjpttXymBe2MdlG2Xflx7AMxaJv_CHhqOUihxAFbEhDWlG0o9-tRAXGMOi22bZmKGhQUY-DbHrPOXDV2iOu2giVspG4w8g",
+                "width": 4156
+            }
+        ],
+        "place_id": "ChIJFRiy6QLsBUgRgvBzK1XnxaM",
+        "plus_code": {
+            "compound_code": "6C6Q+Q7 Nantes",
+            "global_code": "8CVW6C6Q+Q7"
+        },
+        "rating": 4.3,
+        "reference": "ChIJFRiy6QLsBUgRgvBzK1XnxaM",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "26 Rue Scribe, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2140736,
+                "lng": -1.5626892
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21537602989272,
+                    "lng": -1.561336120107278
+                },
+                "southwest": {
+                    "lat": 47.21267637010728,
+                    "lng": -1.564035779892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "8d73f7fa6325e0677aa6481f7a60d404d385d744",
+        "name": "Le Baron",
+        "place_id": "ChIJwX2LJx3sBUgRyY1gBNEuqnk",
+        "plus_code": {
+            "compound_code": "6C7P+JW Nantes",
+            "global_code": "8CVW6C7P+JW"
+        },
+        "rating": 0,
+        "reference": "ChIJwX2LJx3sBUgRyY1gBNEuqnk",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "1 Rue Saint-Vincent, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2174422,
+                "lng": -1.5532909
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21879162989272,
+                    "lng": -1.552003870107278
+                },
+                "southwest": {
+                    "lat": 47.21609197010728,
+                    "lng": -1.554703529892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "d4e247083690af2a982773febf276cfda9b63173",
+        "name": "LE MARLOWE",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 960,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/118388313493404956271/photos\">jean houssin</a>"
+                ],
+                "photo_reference": "CmRaAAAAmm241ZwKFpsW_B4oA6ClCaPwvPU0anG3SWms9xQrhn-5xbkaGLaYISOCgHhbwf_-Jo5QTekUI7oP8ShUimLh6dA3CT68Xj2U83Yq4TjzKe70LECJFqGsKU_GYbIQDZPdEhDLPJiGov9BqitBaDrNsxzzGhQE3fSVszQkzzJNvJ1AltpJyzdHkg",
+                "width": 640
+            }
+        ],
+        "place_id": "ChIJN2sjaaTuBUgRv3BtZ4YLhrY",
+        "plus_code": {
+            "compound_code": "6C8W+XM Nantes",
+            "global_code": "8CVW6C8W+XM"
+        },
+        "rating": 3.4,
+        "reference": "ChIJN2sjaaTuBUgRv3BtZ4YLhrY",
+        "types": [
+            "bar",
+            "night_club",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "4 Rue du Couëdic, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.214095,
+                "lng": -1.557121
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21543512989273,
+                    "lng": -1.555792320107278
+                },
+                "southwest": {
+                    "lat": 47.21273547010728,
+                    "lng": -1.558491979892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "6629aa7064e9931d02919f04caad748caaba7125",
+        "name": "4.44 Bar Lounge",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3037,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/118317256494879326360/photos\">4.44 Bar Lounge</a>"
+                ],
+                "photo_reference": "CmRaAAAAFgO2i2-2GWt4kszh3d7AlWqpsyK17eEAjC_LZD4u9z2x27bKxAJZeBY925waFjpBlqt1Kac6fmTIsYT27vXGRa5uBuBtNCnQJ4LR213wfynBOwOjWV1u7VOwoJyWYBaXEhB7Sg3cXb2LEpzmWlViM3v4GhQHq8wBaJ256_V5fXoRJ9rlxQck8g",
+                "width": 5151
+            }
+        ],
+        "place_id": "ChIJN-pBLqbuBUgRZWnsZiDgwNk",
+        "plus_code": {
+            "compound_code": "6C7V+J5 Nantes",
+            "global_code": "8CVW6C7V+J5"
+        },
+        "rating": 4.5,
+        "reference": "ChIJN-pBLqbuBUgRZWnsZiDgwNk",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "7 Rue des États, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2155557,
+                "lng": -1.5505269
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21691517989272,
+                    "lng": -1.549134920107278
+                },
+                "southwest": {
+                    "lat": 47.21421552010728,
+                    "lng": -1.551834579892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "b676a964a754597546f786f95441669491c63403",
+        "name": "Le Live Bar",
+        "opening_hours": {
+            "open_now": false
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/105540880157878187422/photos\">Sovann Nou</a>"
+                ],
+                "photo_reference": "CmRaAAAALOuN_jCZytix4l619siPke3_nZmiA7v3phpfGx73v01onky0Fen4LcGWFzpaI5_cpdFr3zZMtWA4_HBy7mMepOLHuMvjBFwhhFW7aACAnHHpFJEIvKliYrA6sApgikgNEhDIlieRjjQHH1wM79nZJ5WCGhSHNi1r9EL67YHYb0zWbsD0q8vo0Q",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJh6R5I6XuBUgRQa2twZRlhuw",
+        "plus_code": {
+            "compound_code": "6C8X+6Q Nantes",
+            "global_code": "8CVW6C8X+6Q"
+        },
+        "rating": 4.2,
+        "reference": "ChIJh6R5I6XuBUgRQa2twZRlhuw",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+    {
+        "formatted_address": "6 Rue Scribe, 44000 Nantes",
+        "geometry": {
+            "location": {
+                "lat": 47.2142148,
+                "lng": -1.5610948
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 47.21552072989272,
+                    "lng": -1.559730470107278
+                },
+                "southwest": {
+                    "lat": 47.21282107010728,
+                    "lng": -1.562430129892722
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "20422462b3f4585218065d69c0b3fe3e092b47e6",
+        "name": "Le Duo",
+        "opening_hours": {
+            "open_now": true
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111099712320870631344/photos\">Alexandre Vogel</a>"
+                ],
+                "photo_reference": "CmRaAAAAIzJHCnWesyVVqYzTfoBTk8pGUWF0h2s2fc1TEB2r0UwuUNW5hX-PxyHR2YMrF9aGkOv9fKe6UXle9jkoT56WU8DKm0HMvcoK05mpASmBqA7wtsYSMcmygVrfZjSASYcTEhA3Tr8wanx2o3NLqSCVXbRXGhQQOwClFb1ALoUbI49TT8sxMj_rVg",
+                "width": 5376
+            }
+        ],
+        "place_id": "ChIJn8VfRh3sBUgRcSKb7dIVwK8",
+        "plus_code": {
+            "compound_code": "6C7Q+MH Nantes",
+            "global_code": "8CVW6C7Q+MH"
+        },
+        "rating": 3.9,
+        "reference": "ChIJn8VfRh3sBUgRcSKb7dIVwK8",
+        "types": [
+            "bar",
+            "point_of_interest",
+            "establishment"
+        ]
+    },
+        {
+            "formatted_address": "21 Rue de la Juiverie, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2154363,
+                    "lng": -1.5535794
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21678647989273,
+                        "lng": -1.552229970107278
+                    },
+                    "southwest": {
+                        "lat": 47.21408682010728,
+                        "lng": -1.554929629892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "7d8541d629a423728620124ce41859d9e3359fa8",
+            "name": "Le Bar Du Coin",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1200,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/118273553869378921941/photos\">Jorge Ondiviela</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAtgX4Vo0GbzanxMlSxT0Dzq6jqb-TJ_jWQT4q0KfYmlIdYpBOQU1zu02nco4lgHQNoZU_gMtPWbRyl_cHo0yTj7xe1Kbt2W9Q96hVmDsffBleAu1_eidNgTId6qgZMIPyEhDe0q8LlAT-sSTzH6PwSHLiGhQ9L4Ey2g_1Onf2V6tTOTFtycTStA",
+                    "width": 1600
+                }
+            ],
+            "place_id": "ChIJ262Qt6XuBUgR37scs4tTuoI",
+            "plus_code": {
+                "compound_code": "6C8W+5H Nantes",
+                "global_code": "8CVW6C8W+5H"
+            },
+            "rating": 4.2,
+            "reference": "ChIJ262Qt6XuBUgR37scs4tTuoI",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "2 Rue Louis Blanc, 44200 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.207233,
+                    "lng": -1.555298
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.20859217989272,
+                        "lng": -1.553856320107277
+                    },
+                    "southwest": {
+                        "lat": 47.20589252010728,
+                        "lng": -1.556555979892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "99bbdbb9242638efcf24929602c1e46b9fb548ea",
+            "name": "Le Louis Blanc",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1200,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102633802248160489742/photos\">Le Louis Blanc</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAEGJaFlYydnnCwIJKbzihjMz15Euooka7ECGNGtSRde7h_f6CDP4NKyJP44PTHpPLOHWn2TFx4XDBIOUM_KQvNswZ_Zzk5Gu5uufdjcRtMqB-geCdUpBR3Ie6JBVDJ9stEhDKWJVGUprOkkrnqIPautA9GhQ6p5ci_c2sjKQPRZHtW3MpGUCmPQ",
+                    "width": 1201
+                }
+            ],
+            "place_id": "ChIJPRj_kqvuBUgRjoostmRV3tA",
+            "plus_code": {
+                "compound_code": "6C4V+VV Nantes",
+                "global_code": "8CVW6C4V+VV"
+            },
+            "rating": 4.5,
+            "reference": "ChIJPRj_kqvuBUgRjoostmRV3tA",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "9 Rue Paré, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.216428,
+                    "lng": -1.559381
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21775787989271,
+                        "lng": -1.557971620107278
+                    },
+                    "southwest": {
+                        "lat": 47.21505822010727,
+                        "lng": -1.560671279892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "e96ee7fea3150fd0933b48158bb72c5850b06888",
+            "name": "Le monty's bar",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4032,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103998201556651867886/photos\">auriane hamon</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAYZs5RaflChJF6l6iiLOnMsaFaqMr947EAK-Un49C1H-B9NvbhEXmpFC6_hwBJ-8CWIFV2UySneHcgverL-sLfvRlZ06qs7vewTixJYDv85V6v0Vb17Oh8a4yhkLfOkFFEhC_7z6vNgEKa5Vuy-xvgxrtGhT2kFcv6jHJ1RfukbxTcH_CNE2AEQ",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJzRbtcafuBUgRqRhL6DYSMAU",
+            "plus_code": {
+                "compound_code": "6C8R+H6 Nantes",
+                "global_code": "8CVW6C8R+H6"
+            },
+            "rating": 3.9,
+            "reference": "ChIJzRbtcafuBUgRqRhL6DYSMAU",
+            "types": [
+                "night_club",
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "27 Rue des Carmes, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.21637450000001,
+                    "lng": -1.5553952
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21773362989272,
+                        "lng": -1.554003720107278
+                    },
+                    "southwest": {
+                        "lat": 47.21503397010727,
+                        "lng": -1.556703379892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "992c3a78d963664f600a5b77a56361a91cff21f2",
+            "name": "Bar Le Cercle Rouge Nantes",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3120,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/110042936695196129865/photos\">شوقي الهمامي</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAgl0gRNkiEcRKfHNvQRndtUtudjWLOwF4jAb1t6-qyg46DpCT-BH2i9R-kR0I5K6XvzyjRD_VmyvKgTjUrGcIj7Izn2z7iAsP1EMagXhr06ei5nESnskSHmN3jX0MJcHdEhCLnXf_ub3GL8OhyBBWs3KLGhTjtX3HLbDaXFDMiy25icwMPpJqoA",
+                    "width": 4160
+                }
+            ],
+            "place_id": "ChIJ1WG1hKbuBUgRdMFIJzmT0Kg",
+            "plus_code": {
+                "compound_code": "6C8V+GR Nantes",
+                "global_code": "8CVW6C8V+GR"
+            },
+            "rating": 4.1,
+            "reference": "ChIJ1WG1hKbuBUgRdMFIJzmT0Kg",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "11 Place de la Bourse, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2123773,
+                    "lng": -1.5594031
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21371567989272,
+                        "lng": -1.557994420107278
+                    },
+                    "southwest": {
+                        "lat": 47.21101602010727,
+                        "lng": -1.560694079892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "95b144c2cec4042924a2ec2922ff6ae2c3e4ea85",
+            "name": "Maximo Club",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2048,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104916090397853941551/photos\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAIqCHVXR7tNQrsQTJ4CFZIWFU6tvDfzd45UkA3YTsbz5zeWkX9u8SmV6HKJ0z1ZVItrgi5EgKQ_-3ScUY9CdAlNG0AOViFzQJ1FNa2g_R__jrAWLaj4tUcMzrAoQ83jyZEhA9JqxXludvJ9tfhtGOxZg-GhSg5hIbJIoQ7J2qanE85aqkrp8KNw",
+                    "width": 1536
+                }
+            ],
+            "place_id": "ChIJtdcWGajuBUgRU2_aAKadz14",
+            "plus_code": {
+                "compound_code": "6C6R+X6 Nantes",
+                "global_code": "8CVW6C6R+X6"
+            },
+            "rating": 4.1,
+            "reference": "ChIJtdcWGajuBUgRU2_aAKadz14",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "8 Rue Saint-Nicolas, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2150911,
+                    "lng": -1.5570385
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21642257989272,
+                        "lng": -1.555649370107278
+                    },
+                    "southwest": {
+                        "lat": 47.21372292010727,
+                        "lng": -1.558349029892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "57adad3be1283fed953bbb40521f9930e70f73db",
+            "name": "La Réserve",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3968,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115991707228422145818/photos\">Gaëlle Audouit</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA0ffL0KBasVmC1t9GsWkFcutuslY7HHkpCGB5I4F9Orc4EC6X_nbSSJ6lUpZpoYD2kppTPohTkwQxKUVpRPZYZ0s5sQU9-iDudGPVgiqZyRD7iqRAPBs68dvhPBAJpgLqEhAOarsq1w9S_H6qxcOBd3UlGhRPNWzHQVPzwlJfUDZ0IJVsW5j9Vw",
+                    "width": 2976
+                }
+            ],
+            "place_id": "ChIJeTIeT6buBUgRqtSjWSK4RmA",
+            "plus_code": {
+                "compound_code": "6C8V+25 Nantes",
+                "global_code": "8CVW6C8V+25"
+            },
+            "rating": 4.2,
+            "reference": "ChIJeTIeT6buBUgRqtSjWSK4RmA",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "3 Rue de l'Échelle, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2151035,
+                    "lng": -1.5585698
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21646482989272,
+                        "lng": -1.557186020107278
+                    },
+                    "southwest": {
+                        "lat": 47.21376517010728,
+                        "lng": -1.559885679892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "65be30a604f252d0863f7c13da86a28e52965ec3",
+            "name": "o100pressions",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3492,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108796734737457072831/photos\">Robin J</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAoBXooa3HA77qLd3CJYTDy4vBiNCSzj_UxCvs9uzc2UevdRQBnnOlqVj3NX974GZpaQTQY8NA0b6J0vqpd3LiU9qCWol9XLqdEH9M5PA2WZ9hRMldyEyrxUyjK9GUkz58EhB4blZr0AohkUYlcdXYi45YGhQ63zDpsuMs59MglwDnPYzDRoPL_A",
+                    "width": 4656
+                }
+            ],
+            "place_id": "ChIJ-cx_vKfuBUgR-O5WpFfVr_c",
+            "plus_code": {
+                "compound_code": "6C8R+2H Nantes",
+                "global_code": "8CVW6C8R+2H"
+            },
+            "rating": 4.6,
+            "reference": "ChIJ-cx_vKfuBUgR-O5WpFfVr_c",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "1 Quai Turenne, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2134057,
+                    "lng": -1.5532006
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21473842989272,
+                        "lng": -1.551833420107278
+                    },
+                    "southwest": {
+                        "lat": 47.21203877010727,
+                        "lng": -1.554533079892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "dadaacdc8dc4c4ca0e5130e2fde7fbe8ff908454",
+            "name": "L'Embuscade",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2592,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/112700218953415326516/photos\">Valentin Guibert</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA5raUViuI_arX_FPTd4S1CozvtsumQnsmeLrQO1KrXs_axTMOg_v4OSfTaEZUbigP6jwMheqpAKWqCQzk9gb8VRjfG2iI2avnXXZLviSMYj9aOEgVSn-RdIZLoytdXsncEhDTAYtrTVCeQvJrd8w14WlxGhTsuONFDizNyMuAcnLV8lS6myC2Cw",
+                    "width": 4608
+                }
+            ],
+            "place_id": "ChIJP_OnYq_uBUgRBBUBah4hXig",
+            "plus_code": {
+                "compound_code": "6C7W+9P Nantes",
+                "global_code": "8CVW6C7W+9P"
+            },
+            "rating": 4.2,
+            "reference": "ChIJP_OnYq_uBUgRBBUBah4hXig",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "2 Rue Racine, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2134086,
+                    "lng": -1.5625839
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21471382989272,
+                        "lng": -1.561273820107278
+                    },
+                    "southwest": {
+                        "lat": 47.21201417010727,
+                        "lng": -1.563973479892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "0ab82d91d33d0aa87f1e09e21f4da615acea273a",
+            "name": "Le Molière",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3968,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106895798865340094650/photos\">Phelicia Dirssen</a>"
+                    ],
+                    "photo_reference": "CmRaAAAArSCpA6Z_lhOJROmNwqiBpe8lXme6_3kfqyPoNh7crSZq9Pofwx3CflGkYpbaMeq0Lqy_hMUxANZdHwq0XsgDyv7Ftp5z0X2f7U9GQeUHH26x084oHv-uxV2QiVyeS8HWEhAaeNf1lMYm_sdULZ8Gdsu2GhQfUc1eaNTkV7dVMUGRfW9QURDDoQ",
+                    "width": 2976
+                }
+            ],
+            "place_id": "ChIJd3jj1ALsBUgRgBk8tShJOFI",
+            "plus_code": {
+                "compound_code": "6C7P+9X Nantes",
+                "global_code": "8CVW6C7P+9X"
+            },
+            "rating": 3.8,
+            "reference": "ChIJd3jj1ALsBUgRgBk8tShJOFI",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "3 Rue de l'Échelle, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.21511049999999,
+                    "lng": -1.5585287
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21645927989272,
+                        "lng": -1.557181920107278
+                    },
+                    "southwest": {
+                        "lat": 47.21375962010728,
+                        "lng": -1.559881579892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "8869f71505d694af025fa0776fb5a210a65ba255",
+            "name": "La Provence",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 713,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/113732374253301288039/photos\">La Provence</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAVJAaKnExy0AqSEptb5wuLUXOQrMVZ82uxgVO1hDIu7I39z-1LCBCnpIu3rYo0Fw1ta0v9OrX90vDbsjTlSXanQ89e5TmD5Ud15qjJOCPI46_1p9Tj7VYBBCONnO9AQdsEhD1RP-TQlszeOVq8TevRSmLGhTuOp8Zq3Wfjz4R1xSRUfZlmpssNg",
+                    "width": 950
+                }
+            ],
+            "place_id": "ChIJX0yVu6fuBUgRHa35BxOQx-o",
+            "plus_code": {
+                "compound_code": "6C8R+2H Nantes",
+                "global_code": "8CVW6C8R+2H"
+            },
+            "rating": 3.6,
+            "reference": "ChIJX0yVu6fuBUgRHa35BxOQx-o",
+            "types": [
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "1 Place du Bouffay, 44036 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2148166,
+                    "lng": -1.552816
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21615347989272,
+                        "lng": -1.551529570107278
+                    },
+                    "southwest": {
+                        "lat": 47.21345382010728,
+                        "lng": -1.554229229892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "5ce0add14790a876378761c6c4b6aa5006fab0a5",
+            "name": "Dbka",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3096,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114660827689135106287/photos\">alain annonier</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA4T36gk2aHN1c2FPhfGGHWBNRtAjhtBANmQHJ6qLP-WIwa37fSSz1bdQ7mEXcUA9esB5v5a_iDC-a1KNUOEiS5RZOtV1DnjTCKgyvaxGivK7L4HVEYqq7RDw2j74fV3iPEhAlpYM8Iy35zFwHQBWgvNRcGhQ2ItA0AZdSdh3hKqx_zk4d6e9oIw",
+                    "width": 4128
+                }
+            ],
+            "place_id": "ChIJudyxoqXuBUgRSblj6XCM-Mc",
+            "plus_code": {
+                "compound_code": "6C7W+WV Nantes",
+                "global_code": "8CVW6C7W+WV"
+            },
+            "rating": 3,
+            "reference": "ChIJudyxoqXuBUgRSblj6XCM-Mc",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "2 Place du Commerce, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2135331,
+                    "lng": -1.5575777
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21484982989273,
+                        "lng": -1.556284620107278
+                    },
+                    "southwest": {
+                        "lat": 47.21215017010729,
+                        "lng": -1.558984279892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "ccf9db344731404a34724dba6c470cef4178fd56",
+            "name": "La Coquille",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4032,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103495458819815643786/photos\">Gaëtan Ark</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAHMJ4y3s7wTsEkeOA9t_Ms6FSU2mBTTAQIND-MrYDlxl1u8nunUtmaaIZq35ixi-3dopNM6gRroovCpfhGg4yQdVJS_GYpgal8xIyzDxZNhs13e5oYIIICEsjP_hoYTVQEhBj43eWh5sJ6FoonvKVAXkfGhSM6xspG_yJZFkN5L8eMbCpI7I7uA",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJOyIlgKjuBUgRzKiSdB-It8Y",
+            "plus_code": {
+                "compound_code": "6C7R+CX Nantes",
+                "global_code": "8CVW6C7R+CX"
+            },
+            "rating": 3.2,
+            "reference": "ChIJOyIlgKjuBUgRzKiSdB-It8Y",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "14 Quai Turenne, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2121076,
+                    "lng": -1.5565779
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21340172989271,
+                        "lng": -1.555178020107278
+                    },
+                    "southwest": {
+                        "lat": 47.21070207010727,
+                        "lng": -1.557877679892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "ed43ba2cf1b15d35365ae87c099688d88748c5cb",
+            "name": "Côté Plage",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 526,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117974652254904989860/photos\">Côté Plage</a>"
+                    ],
+                    "photo_reference": "CmRaAAAALVJoSIfdVsrNal0mzkCQbz0Dq0TfnvViv3hpYXy8UnHVuLJ_EfiyLyby4juFUbg-0ALCxLcm9vh9UrT4cJoZ_dRYQfbtrZHzvLOweVNMHyG7SyTmLAuXeA4ycDbpOXzrEhBX9KEvwyVXUiDELcmZyI4JGhR-Q7aOdMbmcTjgi8OKyy4JQk3ftg",
+                    "width": 940
+                }
+            ],
+            "place_id": "ChIJwyXuuKjuBUgR1Zi5qRRLcGE",
+            "plus_code": {
+                "compound_code": "6C6V+R9 Nantes",
+                "global_code": "8CVW6C6V+R9"
+            },
+            "rating": 3.9,
+            "reference": "ChIJwyXuuKjuBUgR1Zi5qRRLcGE",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "21 Rue des Olivettes, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2113981,
+                    "lng": -1.5496241
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21275057989271,
+                        "lng": -1.548261920107278
+                    },
+                    "southwest": {
+                        "lat": 47.21005092010727,
+                        "lng": -1.550961579892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "c06aeba16e0ef1510bc5144ff75050fa29c38ecf",
+            "name": "Le Coup du Lapin",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2340,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114772487244762315399/photos\">Cordon Bleu</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA5gtld1sRVAmTubVqHe5pyIWU4aXeeh15uuHpmI5-dDCSNc40UrcTuBBlnK106UP8fQvlODXil-w_freRZyQ0BtCjGu3YiA2UYso3eMq9GMxpAqnm4Gh3Wr42SGxbgKiGEhCEHUW6DaiNFazrzMGWc4vMGhS1AHfGkEG1lCdV4DE0wU2S5eX2mA",
+                    "width": 4160
+                }
+            ],
+            "place_id": "ChIJT08b1q_uBUgRAhP93EJj2vw",
+            "rating": 4.6,
+            "reference": "ChIJT08b1q_uBUgRAhP93EJj2vw",
+            "types": [
+                "restaurant",
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "2 Rue de la Paix, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.214548,
+                    "lng": -1.554183
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21588312989272,
+                        "lng": -1.552886870107278
+                    },
+                    "southwest": {
+                        "lat": 47.21318347010727,
+                        "lng": -1.555586529892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "2b9395d5c02cb03a474bdcdba5271f1f2bcdd934",
+            "name": "L'Arrosoir",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 667,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115193756769026492401/photos\">L&#39;Arrosoir</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAVMxY_VnU7slsBoGv4VHDCZMaM1xgXoorjdRt_luFLCOs7IKkwyyZ4bv5YP_OkPoEeNGD_a9hnlhNHmclSAzX_0K9bwYllhaB0dscjCzmdab6DNzeoBxaVcirYfysRZjGEhCscRQej6JSEDNhPKlkQNn6GhTrzCDDYr5MYiTSNCse63EA46q_dg",
+                    "width": 1000
+                }
+            ],
+            "place_id": "ChIJKatA76XuBUgRIbKVAOtJjBo",
+            "plus_code": {
+                "compound_code": "6C7W+R8 Nantes",
+                "global_code": "8CVW6C7W+R8"
+            },
+            "rating": 4.5,
+            "reference": "ChIJKatA76XuBUgRIbKVAOtJjBo",
+            "types": [
+                "bar",
+                "cafe",
+                "store",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "5 Rue Saint-Léonard, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2167427,
+                    "lng": -1.5554982
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21809567989272,
+                        "lng": -1.554121270107278
+                    },
+                    "southwest": {
+                        "lat": 47.21539602010727,
+                        "lng": -1.556820929892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "06979264418f99646c0e5b7908ad368843dbcc0a",
+            "name": "Monsieur Machin",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1365,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109008643832698124472/photos\">GOOGLE MYBUSINESS</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAoCNsbwmFkNjpToOuDFd53IV3MdOYTINnvH0LARCtm6STTsr63g_MsWuy9Q6gVmOo2hNWR4w2ly9iH3pz24JvoAWCRxq5RsJoBjXPhRq6yl0V5zv8SOL7H_j0cy6g2bWyEhCtO-tLatPyVONdEmEXsJfrGhQFFwglDQSEAYzZN-xzLSRV8LOBnw",
+                    "width": 2048
+                }
+            ],
+            "place_id": "ChIJWZ24m6buBUgRijX7fXWNssg",
+            "plus_code": {
+                "compound_code": "6C8V+MR Nantes",
+                "global_code": "8CVW6C8V+MR"
+            },
+            "rating": 4.5,
+            "reference": "ChIJWZ24m6buBUgRijX7fXWNssg",
+            "types": [
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "22 Rue Scribe, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.2140053,
+                    "lng": -1.5624338
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21536667989272,
+                        "lng": -1.561083120107278
+                    },
+                    "southwest": {
+                        "lat": 47.21266702010727,
+                        "lng": -1.563782779892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "9d0e9a063df8d6a0cca6339645a77e52b4470c11",
+            "name": "Peter Mc Cool - Irish Pub",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 960,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102090377086785839459/photos\">Peter Mc Cool</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAikpiAgTrtUFeWYzI83SimewsOacku4djoZJiE7Wq3qnV2CwufB2rUSe9teqgbvObxwVKBmylqOGDjTeMc4nZ4qkaabsqRsd77--RuuNE-ETCc5hdjFTgsfpanqVAnFs4EhA5og_84Pla5fYOUxKml_1dGhROuAeF7teXQS7Nz32D80ydMW6OQA",
+                    "width": 540
+                }
+            ],
+            "place_id": "ChIJh0YcJh3sBUgRdZKNX2vQQDA",
+            "plus_code": {
+                "compound_code": "6C7Q+J2 Nantes",
+                "global_code": "8CVW6C7Q+J2"
+            },
+            "rating": 4.3,
+            "reference": "ChIJh0YcJh3sBUgRdZKNX2vQQDA",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "2 Rue des Carmes, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.21578419999999,
+                    "lng": -1.5549435
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21712742989272,
+                        "lng": -1.553628720107278
+                    },
+                    "southwest": {
+                        "lat": 47.21442777010728,
+                        "lng": -1.556328379892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "e7240eb3fa030fec9d02014affe31b42f020deee",
+            "name": "Café Cult' - Restaurant Nantes",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1080,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101976313089751443722/photos\">A Google User</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAZ1H8Mtp-NcD3NjS5C0ri22RvzgHUrkr8bQrMSnZ7OedtZVss59xaxZ9XCmwG7RfLXwyjg_Q0OePuEczBai1W8j64qFZItIUA3kAjvOO-hTGlp1uSUYlyxnDddb-5RcbPEhBrwH7NqQDHsD096k6HTLUqGhT9JX-KyjtQmcibwLDv7yKltXYlxA",
+                    "width": 1440
+                }
+            ],
+            "place_id": "ChIJnQF41aXuBUgRasZeP9xC5UI",
+            "plus_code": {
+                "compound_code": "6C8W+82 Nantes",
+                "global_code": "8CVW6C8W+82"
+            },
+            "rating": 3.9,
+            "reference": "ChIJnQF41aXuBUgRasZeP9xC5UI",
+            "types": [
+                "restaurant",
+                "cafe",
+                "bar",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "3 Quai de la Fosse, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.21189649999999,
+                    "lng": -1.5596608
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21322102989272,
+                        "lng": -1.558262320107278
+                    },
+                    "southwest": {
+                        "lat": 47.21052137010727,
+                        "lng": -1.560961979892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            "id": "0b8b74ab68cf10afb9c344b33abc20cbed164d02",
+            "name": "La Trinquette",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4160,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/118176290379461288277/photos\">Evelyne Andre</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAs8iu6jEokLJCSo2ux_aRb29aBq51g5-5NxCZFB0WhnMfyoKz_jIIB2Hx6deIpHRWQb8sd8xORmmLWFkEdD5zdIFghAVIymW1ZARCA38HxAL7tLmXpLPHImdoe4eLZGlbEhD9FDkRsIYkF48HhYNRjpgdGhRjAl4BeEpXdOYh8myoo49nU8ILrA",
+                    "width": 3120
+                }
+            ],
+            "place_id": "ChIJ9X4BJKjuBUgRp4W5zrVLnDk",
+            "plus_code": {
+                "compound_code": "6C6R+Q4 Nantes",
+                "global_code": "8CVW6C6R+Q4"
+            },
+            "rating": 4.3,
+            "reference": "ChIJ9X4BJKjuBUgRp4W5zrVLnDk",
+            "types": [
+                "bar",
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "formatted_address": "2 Rue de la Baclerie, 44000 Nantes",
+            "geometry": {
+                "location": {
+                    "lat": 47.215087,
+                    "lng": -1.552954
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 47.21640737989271,
+                        "lng": -1.551647170107278
+                    },
+                    "southwest": {
+                        "lat": 47.21370772010727,
+                        "lng": -1.554346829892722
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+            "id": "999cda2f392b37b12cb55352b0017069ea133b45",
+            "name": "Le Perrok'",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4032,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102706692553527815611/photos\">Carole Laimay</a>"
+                    ],
+                    "photo_reference": "CmRaAAAA0wsN9VaUtjoS5ipkq_G9i23iONcF8AabHYeWdD0KbSy2vATghCHl4RE6AGS3mxTZHWRNMMUWNpEO669QVRPehBNkFExtzJYg6jmxXIjrHca0wEo1_yeFwHJNlSV6eXaOEhBFdYeL6qOoJ8biLhZLp4UMGhRBsC-A_ZBQFFXB9VgwgzzSrD_7tQ",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJ3a5tu6XuBUgRui8wuieQ-0U",
+            "plus_code": {
+                "compound_code": "6C8W+2R Nantes",
+                "global_code": "8CVW6C8W+2R"
+            },
+            "rating": 4.3,
+            "reference": "ChIJ3a5tu6XuBUgRui8wuieQ-0U",
+            "types": [
+                "bar",
+                "point_of_interest",
+                "establishment"
+            ]
+        }
+],
+    "status": "OK"
+}
