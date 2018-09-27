@@ -31,10 +31,10 @@ function setup() {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
     }
 
-    bars.push(new Bar((100), (300)));
-    bars.push(new Bar((300), (200)));
-    bars.push(new Bar((500), (300)));
-    bars.push(new Bar((700), (600)));
+    bars.push(new Bar((100), (300), name_bar[0]));
+    bars.push(new Bar((300), (200), name_bar[1]));
+    bars.push(new Bar((500), (300), name_bar[2]));
+    bars.push(new Bar((700), (600), name_bar[3]));
 }
 
 function draw() {
