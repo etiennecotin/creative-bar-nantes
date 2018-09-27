@@ -25,7 +25,7 @@ function preload() {
 function setup() {
 
     createCanvas(windowWidth, windowHeight);
-    parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
+    parts.push(new Particule(0, 0));
 
     for (var i = 0; i < 50; i++) {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
@@ -44,7 +44,6 @@ function draw() {
         bars[i].update();
         for (var j = 0; j < parts.length; j++) {
             parts[j].update();
-            // console.log(parts[j].pos.dist(bars[i].pos));
             if (dist(bars[i].pos.x, bars[i].pos.y, parts[j].pos.x, parts[j].pos.y) < 50) {
                 bars[i].inside();
             } else {
@@ -52,10 +51,17 @@ function draw() {
             }
         }
     }
-
-
-    for (var i = 0; i < personnes.length; i++) {
-        personnes[i].update();
+    
+for(var k = 0; k <bars.length; k++){
+    bars[k].update();
+    for (var o = 0; o < personnes.length; o++) {
+        personnes[o].update();
+        if (dist(bars[k].pos.x, bars[k].pos.y, personnes[o].pos.x, personnes[o].pos.y) < 50) {
+                bars[k].entrer(l);
+            } else {
+                bars[k].sortir();
+            }
+        }
     }
 
     for (var i = 0; i < personnes.length; i++) {
@@ -94,6 +100,8 @@ class Particule {
         this.decaps2 = loadSound('decapsuler-2.mp3');
         this.decaps = loadSound('decapsuler.mp3');
         this.text = name;
+        this.l = l;
+        this.maxl = random(50, 100);
     }
     update() {
         push();
@@ -102,7 +110,7 @@ class Particule {
         fill(0, 102, 153);
         text(this.text, this.pos.x+50, this.pos.y-10);
         pop();
-        rect(this.pos.x, this.pos.y, l, l);
+        rect(this.pos.x, this.pos.y, this.l, this.l);
         
     }
     inside() {
@@ -128,7 +136,7 @@ class Particule {
         }
         
         fill('#fae');
-        rect(this.pos.x, this.pos.y, l, l);
+        rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
     }
     outside() {
@@ -139,9 +147,27 @@ class Particule {
         this.decaps.stop();
         this.decaps2.stop();
         fill('#fff');
-        rect(this.pos.x, this.pos.y, l, l);
+        rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
     }
+      
+      entrer(cote){
+          push();
+          console.log("test"+cote);
+          if(this.l<this.maxl){
+             this.l++; 
+          }
+          console.log("test"+cote);
+          rect(this.pos.x, this.pos.y, this.l, this.l);
+          pop();
+      }
+      
+      sortir(){
+        push();
+        fill('#fff');
+        rect(this.pos.x, this.pos.y, this.l, this.l);
+        pop();
+      }
   }
 
 
