@@ -70,7 +70,7 @@ function draw() {
         bars[i].update();
         parts[0].update();
         // console.log(parts[j].pos.dist(bars[i].pos));
-        if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < 50) {
+        if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < l) {
             bars[i].inside();
         } else {
             bars[i].outside();
