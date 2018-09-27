@@ -33,10 +33,10 @@ function setup() {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
     }
 
-    bars.push(new Bar((100), (300), name_bar[0]));
-    bars.push(new Bar((300), (200), name_bar[1]));
-    bars.push(new Bar((500), (300), name_bar[2]));
-    bars.push(new Bar((700), (600), name_bar[3]));
+    bars.push(new Bar((100), (300), name_bar[0], music[0]));
+    bars.push(new Bar((300), (200), name_bar[1], music[1]));
+    bars.push(new Bar((500), (300), name_bar[2], music[2]));
+    bars.push(new Bar((700), (600), name_bar[3], music[3]));
 }
 
 function draw() {
@@ -87,7 +87,7 @@ class Particule {
 }
 
   class Bar{
-    constructor(x , y, name) {
+    constructor(x , y, name, music) {
 
         this.pos = createVector(x, y);
         this.song = 0;
@@ -95,6 +95,9 @@ class Particule {
         this.ouvertureBar = loadSound('ouverture-bar.mp3');
         this.decaps2 = loadSound('decapsuler-2.mp3');
         this.decaps = loadSound('decapsuler.mp3');
+        this.music = loadSound(music);
+        this.nbPersonne = [];
+        this.maxPerson = random(50, 100);
         this.text = name;
     }
     update() {
@@ -144,6 +147,9 @@ class Particule {
         fill('#fff');
         rect(this.pos.x, this.pos.y, l, l);
         pop();
+    }
+    bigger() {
+        this.music.play();
     }
   }
 
