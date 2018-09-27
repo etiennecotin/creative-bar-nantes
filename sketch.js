@@ -9,6 +9,7 @@ var l = 15;
 var bars = [];
 
 var personnes = [];
+var music = ['Alan Walker - Fade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3','GALA - Freed from desire.mp3','Jain - Alright.mp3','Le Wanski - Bella Ciao.mp3','Lost Temple - Panda Dub.mp3','Martin Garrix  Brooks - Like I Do.mp3','MC Fioti - Bum Bum Tam Tam.mp3','OrelSan - San.mp3','White Town - Your Woman.mp3'];
 var ouvertureBar;
 var ambiance;
 var decaps;
@@ -43,6 +44,8 @@ function setup() {
     myMap = mappa.tileMap(options);
     myMap.overlay(canvas);
 
+    rectMode(CENTER);
+
     parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
 
     for (var i = 0; i < 100; i++) {
@@ -50,11 +53,11 @@ function setup() {
     }
 
     data.then(function(dataResult) {
-        dataResult.results.forEach(function (element) {
+        dataResult.results.forEach(function (element, index) {
             let lat = parseFloat(element.geometry.location.lat);
             let lng = parseFloat(element.geometry.location.lng);
             let name = element.name;
-            bars.push(new Bar(lat, lng, name));
+            bars.push(new Bar(lat, lng, name, music[index]));
         })
     });
 }
@@ -106,7 +109,7 @@ class Particule {
 }
 
   class Bar{
-    constructor(x , y, name) {
+    constructor(x , y, name, music) {
 
         this.pos = {
             'x' : x,
@@ -119,6 +122,9 @@ class Particule {
         this.ouvertureBar = loadSound('ouverture-bar.mp3');
         this.decaps2 = loadSound('decapsuler-2.mp3');
         this.decaps = loadSound('decapsuler.mp3');
+        this.music = loadSound(music);
+        this.nbPersonne = [];
+        this.maxPerson = random(50, 100);
         this.text = name;
     }
     update() {
@@ -129,8 +135,9 @@ class Particule {
         fill(0, 102, 153);
         text(this.text, this.coor.x+50, this.coor.y-10);
         pop();
+        push();
         rect(this.coor.x, this.coor.y, l, l);
-        
+        pop();
     }
     inside() {
         push();
@@ -168,6 +175,9 @@ class Particule {
             fill('#fff');
             rect(this.coor.x, this.coor.y, l, l);
         pop();
+    }
+    bigger() {
+        this.music.play();
     }
   }
 
