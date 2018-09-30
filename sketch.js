@@ -87,11 +87,11 @@ function draw() {
         }
     }
     
-for(var k = 0; k <bars.length; k++){
-    bars[k].update();
-    for (var o = 0; o < personnes.length; o++) {
-        personnes[o].update();
-        if (dist(bars[k].pos.x, bars[k].pos.y, personnes[o].pos.x, personnes[o].pos.y) < 50) {
+    for(var k = 0; k <bars.length; k++){
+        bars[k].update();
+        for (var o = 0; o < personnes.length; o++) {
+            personnes[o].update();
+            if (dist(bars[k].pos.x, bars[k].pos.y, personnes[o].pos.x, personnes[o].pos.y) < 50) {
                 bars[k].entrer(l);
             } else {
                 bars[k].sortir();
