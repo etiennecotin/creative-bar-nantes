@@ -132,11 +132,8 @@ class Particule {
         this.ouvertureBar = loadSound('ouverture-bar.mp3');
         this.decaps2 = loadSound('decapsuler-2.mp3');
         this.decaps = loadSound('decapsuler.mp3');
-<<<<<<< HEAD
-        this.music = loadSound(music);
-=======
+        // this.music = loadSound(music);
         this.music = music;
->>>>>>> etienne
         this.nbPersonne = [];
         this.maxPerson = random(50, 100);
         this.text = name;
@@ -227,8 +224,6 @@ class Personnes {
     }
 }
 
-<<<<<<< HEAD
-=======
 function getFavoriteBar(bars) {
     
     bars.sort(compare)
@@ -244,7 +239,6 @@ function compare(a,b) {
     return 0;
 }
 
->>>>>>> etienne
 function doubleClicked() {
 
 }
