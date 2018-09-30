@@ -29,6 +29,8 @@ const options = {
     style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png"
 };
 
+var favoriteBar;
+
 function preload() {
     ouvertureBar = loadSound('ouverture-bar.mp3');
     ambiance = loadSound('bruit-ambiance.mp3');
@@ -54,7 +56,12 @@ function setup() {
             let lat = parseFloat(element.geometry.location.lat);
             let lng = parseFloat(element.geometry.location.lng);
             let name = element.name;
-            bars.push(new Bar(lat, lng, name));
+            // bars.push(new Bar(lat, lng, name));
+            if (index > music.length-1){
+                bars.push(new Bar(lat, lng, name, random(0, music.length)));
+            } else {
+                bars.push(new Bar(lat, lng, name, index));
+            }
         })
     });
 }
@@ -82,6 +89,9 @@ function draw() {
     for (var i = 0; i < personnes.length; i++) {
         personnes[i].draw();
     }
+
+
+    getFavoriteBar(bars);
 }
 
 class Particule {
@@ -111,7 +121,7 @@ class Particule {
         this.pos = {
             'x' : x,
             'y' : y
-        }
+        };
         // this.pos = createVector(x, y);
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         this.song = 0;
@@ -119,6 +129,9 @@ class Particule {
         this.ouvertureBar = loadSound('ouverture-bar.mp3');
         this.decaps2 = loadSound('decapsuler-2.mp3');
         this.decaps = loadSound('decapsuler.mp3');
+        this.music = music;
+        this.nbPersonne = [];
+        this.maxPerson = random(50, 100);
         this.text = name;
     }
     update() {
@@ -203,6 +216,20 @@ class Personnes {
     }
 }
 
+function getFavoriteBar(bars) {
+    
+    bars.sort(compare)
+
+    favoriteBar =  bars[0];
+}
+
+function compare(a,b) {
+    if (a.nbPersonne.length < b.nbPersonne.length)
+        return -1;
+    if (a.nbPersonne.length > b.nbPersonne.length)
+        return 1;
+    return 0;
+}
 
 function doubleClicked() {
 
