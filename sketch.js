@@ -41,6 +41,7 @@ function preload() {
 
 function setup() {
 
+
     canvas = createCanvas(windowWidth, windowHeight);
 
     myMap = mappa.tileMap(options);
@@ -49,6 +50,8 @@ function setup() {
     rectMode(CENTER);
 
     parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
+
+    // parts.push(new Particule(0, 0));
 
     for (var i = 0; i < 100; i++) {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
@@ -83,10 +86,17 @@ function draw() {
             bars[i].outside();
         }
     }
-
-
-    for (var i = 0; i < personnes.length; i++) {
-        personnes[i].update();
+    
+for(var k = 0; k <bars.length; k++){
+    bars[k].update();
+    for (var o = 0; o < personnes.length; o++) {
+        personnes[o].update();
+        if (dist(bars[k].pos.x, bars[k].pos.y, personnes[o].pos.x, personnes[o].pos.y) < 50) {
+                bars[k].entrer(l);
+            } else {
+                bars[k].sortir();
+            }
+        }
     }
 
     for (var i = 0; i < personnes.length; i++) {
@@ -137,6 +147,8 @@ class Particule {
         this.nbPersonne = [];
         this.maxPerson = random(50, 100);
         this.text = name;
+        this.l = l;
+        this.maxl = random(50, 100);
     }
     update() {
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
@@ -149,6 +161,8 @@ class Particule {
         push();
         rect(this.coor.x, this.coor.y, l, l);
         pop();
+
+        rect(this.pos.x, this.pos.y, this.l, this.l);
     }
     inside() {
         push();
@@ -173,7 +187,8 @@ class Particule {
         }
         
         fill('#fae');
-        rect(this.coor.x, this.coor.y, l, l);
+        // rect(this.coor.x, this.coor.y, l, l);
+            rect(this.coor.x, this.coor.y, this.l, this.l);
         pop();
     }
     outside() {
@@ -184,11 +199,29 @@ class Particule {
             this.decaps.stop();
             this.decaps2.stop();
             fill('#fff');
-            rect(this.coor.x, this.coor.y, l, l);
+            rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
     }
     bigger() {
         this.music.play();
+    }
+      
+    entrer(cote){
+      push();
+          console.log("test"+cote);
+          if(this.l<this.maxl){
+             this.l++;
+          }
+          console.log("test"+cote);
+          rect(this.pos.x, this.pos.y, this.l, this.l);
+      pop();
+    }
+
+    sortir(){
+        push();
+            fill('#fff');
+            rect(this.pos.x, this.pos.y, this.l, this.l);
+        pop();
     }
   }
 
