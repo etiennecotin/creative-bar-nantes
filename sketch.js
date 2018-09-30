@@ -15,6 +15,8 @@ var ambiance;
 var decaps;
 var decaps2;
 
+var nbParticules = 100;
+
 
 
 // Create a new Mappa instance.
@@ -37,6 +39,7 @@ function preload() {
     ambiance = loadSound('bruit-ambiance.mp3');
     decaps = loadSound('decapsuler.mp3');
     decaps2 = loadSound('decapsuler-2.mp3');
+    leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
 }
 
 function setup() {
@@ -53,7 +56,7 @@ function setup() {
 
     // parts.push(new Particule(0, 0));
 
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < nbParticules; i++) {
         personnes.push(new Personnes((random(0, width)), (random(0, height))));
     }
 
@@ -72,39 +75,45 @@ function setup() {
     });
 }
 
+function playFavoriteBar(favoriteBar) {
+
+    if (favoriteBar != bars[0]){
+
+        leWanski.play()
+    }
+}
+
 function draw() {
     // background(0);
     clear();
 
-    for (var i = 0; i < bars.length; i++) {
+    for (let i = 0; i < bars.length; i++) {
         bars[i].update();
         parts[0].update();
         // console.log(parts[j].pos.dist(bars[i].pos));
-        if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < l) {
+        if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < bars[i].l/1.5) {
             bars[i].inside();
         } else {
             bars[i].outside();
         }
-    }
-    
-    for(var k = 0; k <bars.length; k++){
-        bars[k].update();
-        for (var o = 0; o < personnes.length; o++) {
-            personnes[o].update();
-            if (dist(bars[k].pos.x, bars[k].pos.y, personnes[o].pos.x, personnes[o].pos.y) < 50) {
-                bars[k].entrer(l);
+        for (let o = 0; o < personnes.length; o++) {
+            // personnes[o].update();
+            if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
+                bars[i].entrer(bars[i], personnes[o]);
+                // console.log(bars[i].nbPersonne)
             } else {
-                bars[k].sortir();
+                bars[i].sortir();
             }
         }
     }
 
-    for (var i = 0; i < personnes.length; i++) {
+    for (let i = 0; i < personnes.length; i++) {
+        personnes[i].update();
         personnes[i].draw();
     }
 
-
     getFavoriteBar(bars);
+    playFavoriteBar(favoriteBar);
 }
 
 class Particule {
@@ -153,41 +162,38 @@ class Particule {
     update() {
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         push();
-        textAlign(CENTER);
-        textSize(20);
-        fill(0, 102, 153);
-        text(this.text, this.coor.x+50, this.coor.y-10);
+            textAlign(CENTER);
+            textSize(15);
+            fill(0, 102, 153);
+            text(this.text, this.coor.x+50, this.coor.y-10);
         pop();
         push();
-        rect(this.coor.x, this.coor.y, l, l);
+            rect(this.coor.x, this.coor.y, this.l, this.l);
         pop();
 
-        rect(this.pos.x, this.pos.y, this.l, this.l);
+        // rect(this.pos.x, this.pos.y, this.l, this.l);
     }
     inside() {
         push();
-        this.song += 1;
-        // console.log('song', this.song);
-        
-        if (this.song == 1) {
-            this.ouvertureBar.play();
-            this.ambiance.play();
-            this.ambiance.setVolume(0.5);
-        } else if(this.song%1450 == 0) {
-            this.ambiance.play();
-        } else if(this.song%150 == 0) {
-            var decaps_switch = Math.round(random(0, 10));
-            console.log(decaps_switch);
-            
-            if (decaps_switch%2 == 0) {
-                this.decaps.play();
-            } else {
-                this.decaps2.play();
+            this.song += 1;
+            // console.log('song', this.song);
+            if (this.song == 1) {
+                this.ouvertureBar.play();
+                this.ambiance.play();
+                this.ambiance.setVolume(0.5);
+            } else if(this.song%1450 == 0) {
+                this.ambiance.play();
+            } else if(this.song%150 == 0) {
+                var decaps_switch = Math.round(random(0, 10));
+
+                if (decaps_switch%2 == 0) {
+                    this.decaps.play();
+                } else {
+                    this.decaps2.play();
+                }
             }
-        }
-        
-        fill('#fae');
-        // rect(this.coor.x, this.coor.y, l, l);
+
+            fill('#fae');
             rect(this.coor.x, this.coor.y, this.l, this.l);
         pop();
     }
@@ -199,29 +205,27 @@ class Particule {
             this.decaps.stop();
             this.decaps2.stop();
             fill('#fff');
-            rect(this.pos.x, this.pos.y, this.l, this.l);
+            // rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
     }
     bigger() {
         this.music.play();
     }
       
-    entrer(cote){
-      push();
-          console.log("test"+cote);
-          if(this.l<this.maxl){
-             this.l++;
-          }
-          console.log("test"+cote);
-          rect(this.pos.x, this.pos.y, this.l, this.l);
-      pop();
+    entrer(bar, personne){
+
+        if (!bar.nbPersonne.includes(personne)) {
+            bar.nbPersonne.push(personne)
+            personne.vit = createVector(0, 0);
+            this.l++;
+        }
     }
 
     sortir(){
-        push();
-            fill('#fff');
-            rect(this.pos.x, this.pos.y, this.l, this.l);
-        pop();
+    //     push();
+    //         fill('#fff');
+    //         rect(this.pos.x, this.pos.y, this.l, this.l);
+    //     pop();
     }
   }
 
