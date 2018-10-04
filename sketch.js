@@ -34,12 +34,14 @@ const options = {
 
 var favoriteBar;
 
+var mapBorder = [];
+
 function preload() {
-    ouvertureBar = loadSound('ouverture-bar.mp3');
-    ambiance = loadSound('bruit-ambiance.mp3');
-    decaps = loadSound('decapsuler.mp3');
-    decaps2 = loadSound('decapsuler-2.mp3');
-    leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
+    // ouvertureBar = loadSound('ouverture-bar.mp3');
+    // ambiance = loadSound('bruit-ambiance.mp3');
+    // decaps = loadSound('decapsuler.mp3');
+    // decaps2 = loadSound('decapsuler-2.mp3');
+    // leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
 }
 
 function setup() {
@@ -56,9 +58,11 @@ function setup() {
 
     // parts.push(new Particule(0, 0));
 
-    for (var i = 0; i < nbParticules; i++) {
-        personnes.push(new Personnes((random(0, width)), (random(0, height))));
+    if (myMap.map){
+        mapBorder = myMap.map.getBounds();
     }
+
+
 
     data.then(function(dataResult) {
         dataResult.results.forEach(function (element, index) {
@@ -72,7 +76,20 @@ function setup() {
                 bars.push(new Bar(lat, lng, name, index));
             }
         })
-    });
+    })
+
+    for (var i = 0; i < nbParticules; i++) {
+        if (mapBorder._southWest && mapBorder._northEast){
+            let minLat = mapBorder._southWest.lat;
+            let maxLat = mapBorder._northEast.lat;
+            let minLng = mapBorder._southWest.lng;
+            let maxLng = mapBorder._northEast.lng;
+
+            personnes.push(new Personnes(random(minLat, maxLat), random(minLng, maxLng)));
+        }else {
+            personnes.push(new Personnes(options.lat, options.lng));
+        }
+    }
 }
 
 function playFavoriteBar(favoriteBar) {
@@ -83,9 +100,15 @@ function playFavoriteBar(favoriteBar) {
     }
 }
 
+
 function draw() {
     // background(0);
     clear();
+
+    if (myMap.map){
+        mapBorder = myMap.map.getBounds();
+    }
+
 
     for (let i = 0; i < bars.length; i++) {
         bars[i].update();
@@ -147,10 +170,10 @@ class Particule {
         // this.pos = createVector(x, y);
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         this.song = 0;
-        this.ambiance = loadSound('bruit-ambiance.mp3');
-        this.ouvertureBar = loadSound('ouverture-bar.mp3');
-        this.decaps2 = loadSound('decapsuler-2.mp3');
-        this.decaps = loadSound('decapsuler.mp3');
+        // this.ambiance = loadSound('bruit-ambiance.mp3');
+        // this.ouvertureBar = loadSound('ouverture-bar.mp3');
+        // this.decaps2 = loadSound('decapsuler-2.mp3');
+        // this.decaps = loadSound('decapsuler.mp3');
         // this.music = loadSound(music);
         this.music = music;
         this.nbPersonne = [];
@@ -178,18 +201,18 @@ class Particule {
             this.song += 1;
             // console.log('song', this.song);
             if (this.song == 1) {
-                this.ouvertureBar.play();
-                this.ambiance.play();
-                this.ambiance.setVolume(0.5);
+                // this.ouvertureBar.play();
+                // this.ambiance.play();
+                // this.ambiance.setVolume(0.5);
             } else if(this.song%1450 == 0) {
-                this.ambiance.play();
+                // this.ambiance.play();
             } else if(this.song%150 == 0) {
                 var decaps_switch = Math.round(random(0, 10));
 
                 if (decaps_switch%2 == 0) {
-                    this.decaps.play();
+                    // this.decaps.play();
                 } else {
-                    this.decaps2.play();
+                    // this.decaps2.play();
                 }
             }
 
@@ -200,10 +223,10 @@ class Particule {
     outside() {
         push();
             this.song = 0;
-            this.ambiance.stop();
-            this.ouvertureBar.stop();
-            this.decaps.stop();
-            this.decaps2.stop();
+            // this.ambiance.stop();
+            // this.ouvertureBar.stop();
+            // this.decaps.stop();
+            // this.decaps2.stop();
             fill('#fff');
             // rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
@@ -216,7 +239,7 @@ class Particule {
 
         if (!bar.nbPersonne.includes(personne)) {
             bar.nbPersonne.push(personne)
-            personne.vit = createVector(0, 0);
+            // personne.vit = createVector(0, 0);
             this.l++;
         }
     }
@@ -232,8 +255,16 @@ class Particule {
 
 class Personnes {
     constructor(x, y) {
-        this.pos = createVector(x, y);
+        this.initpos = {
+            'x' :  x,
+            'y' :  y
+        };
+        // this.initpos = createVector(x, y);
+        // console.log(this.initpos)
+        this.coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
+        this.pos = createVector(this.coor.x, this.coor.y);
         this.vit = createVector(random(-2, 2), random(-2, 2));
+        this.inBar = false;
         while(this.vit.mag()<1){
             this.vit = createVector(random(-2, 2), random(-2, 2));
         }
@@ -241,7 +272,36 @@ class Personnes {
     }
 
     update() {
-        this.pos.add(this.vit);
+        let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
+        if (coor.x != -100 && coor.y != -100){
+            this.coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
+
+            // console.log(createVector(this.coor.x, this.coor.y));
+            // console.log(createVector(this.coor.x, this.coor.y).add(this.vit));
+
+            this.pos = createVector(this.coor.x, this.coor.y).add(this.vit);
+            // console.log(this.coor.x)
+            // this.coor.x += this.vit.x;
+            // this.coor.y += this.vit.y;
+            // console.log(this.coor.x)
+
+            // // console.log(this.pos);
+            // // console.log(myMap.pixelToLatLng(this.pos.x,  this.pos.y));
+            let px = myMap.pixelToLatLng(this.pos.x,  this.pos.y);
+
+            this.initpos.x = px.lat;
+            this.initpos.y = px.lng;
+        }
+
+
+
+        // this.initpos.add(this.vit);
+        // this.coor = myMap.latLngToPixel(this.initpos.x, this.initpos.y);
+        // this.pos = createVector(this.coor.x, this.coor.y);
+
+
+
+        // this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
 
         if ((this.pos.x > width) || (this.pos.x < 0)) {
             this.vit.x = -this.vit.x;
@@ -251,9 +311,13 @@ class Personnes {
         }
     }
 
+    inside(bar) {
+
+    }
+
     draw() {
         push();
-        translate(this.pos * random(0.1, 0.7));
+        // translate(this.pos * random(0.1, 0.7));
 
         ellipse(this.pos.x, this.pos.y, r);
 
