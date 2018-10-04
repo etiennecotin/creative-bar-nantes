@@ -14,6 +14,7 @@ var ouvertureBar;
 var ambiance;
 var decaps;
 var decaps2;
+var reset = false;
 
 var nbParticules = 100;
 
@@ -110,7 +111,12 @@ function draw() {
     for (let i = 0; i < personnes.length; i++) {
         personnes[i].update();
         personnes[i].draw();
+        if (reset && personnes[i].inside) {
+            personnes[i].outside();
+        }
+        
     }
+    reset = false;
 
     getFavoriteBar(bars);
     playFavoriteBar(favoriteBar);
@@ -217,6 +223,8 @@ class Particule {
         if (!bar.nbPersonne.includes(personne)) {
             bar.nbPersonne.push(personne)
             personne.vit = createVector(0, 0);
+            personne.color = 0;
+            personne.inside = true;
             this.l++;
         }
     }
@@ -234,6 +242,8 @@ class Personnes {
     constructor(x, y) {
         this.pos = createVector(x, y);
         this.vit = createVector(random(-2, 2), random(-2, 2));
+        this.color = 255;
+        this.inside = false;
         while(this.vit.mag()<1){
             this.vit = createVector(random(-2, 2), random(-2, 2));
         }
@@ -253,10 +263,16 @@ class Personnes {
 
     draw() {
         push();
-        translate(this.pos * random(0.1, 0.7));
-
+        // translate(this.pos * random(0.1, 0.7));
+        fill(this.color);
         ellipse(this.pos.x, this.pos.y, r);
-
+        pop();
+    }
+    outside() {
+        push();
+        this.color = 255;
+        fill(this.color);
+        this.vit = createVector(random(-2, 2), random(-2, 2));
         pop();
     }
 }
@@ -281,5 +297,6 @@ function doubleClicked() {
 }
 
 function mouseReleased() {
-
+    console.log('Click - Reset');
+    reset = true;
 }
