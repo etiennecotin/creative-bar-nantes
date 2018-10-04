@@ -138,16 +138,8 @@ function draw() {
                 if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
                     bars[i].entrer(bars[i], personnes[o]);
                 } else {
-                    bars[i].outside();
-                }
-                for (let o = 0; o < personnes.length; o++) {
-                    // personnes[o].update();
-                    if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
-
-                        bars[i].entrer(bars[i], personnes[o]);
-                    } else {
-                        bars[i].sortir();
-                    }
+                    // bars[i].outside();
+                    // bars[i].sortir();
                 }
             }
         }
