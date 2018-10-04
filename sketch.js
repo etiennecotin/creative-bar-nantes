@@ -44,6 +44,17 @@ var favoriteBar;
 
 // var mapBorder = [];
 
+var nbParticules2 = 1;
+var nbBars = 1;
+
+socket.on('nbParticules', function(val){
+    nbParticules2 = val;
+});
+socket.on('nbBars', function(val){
+    nbBars = val;
+});
+
+
 function preload() {
     // ouvertureBar = loadSound('ouverture-bar.mp3');
     // ambiance = loadSound('bruit-ambiance.mp3');
