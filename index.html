@@ -7,10 +7,45 @@
 	<script src="./addons/p5.collide2D.js"></script>
 	<script src="./addons/mappa.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="loader.css">
 </head>
 <body style="margin:0">
 
+	<div class="loading-animation" id="loader">
+		<div id="container">
+			<div class="white"></div>
+			<div id="beaker">
+				<div class="beer-foam">
+					<div class="foam-1"></div>
+					<div class="foam-2"></div>
+					<div class="foam-3"></div>
+					<div class="foam-4"></div>
+					<div class="foam-5"></div>
+					<div class="foam-6"></div>
+				</div>
+				<div id="liquid">
+					<div class="bubble bubble1"></div>
+					<div class="bubble bubble2"></div>
+					<div class="bubble bubble3"></div>
+					<div class="bubble bubble4"></div>
+					<div class="bubble bubble5"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <script src="./load.js"></script>
 <script src="./sketch.js"></script>
+
+<script>
+$('#Leaflet').ready(function() {
+	setTimeout(function(){ 
+		$('#loader').hide();
+	}, 4000);
+});
+
+
+
+</script>
 </body>
 </html>

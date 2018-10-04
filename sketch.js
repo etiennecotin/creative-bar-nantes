@@ -16,7 +16,7 @@ var decaps;
 var decaps2;
 var reset = false;
 
-var nbParticules = 100;
+var nbParticules = 300;
 
 
 
@@ -36,10 +36,10 @@ const options = {
 var favoriteBar;
 
 function preload() {
-    ouvertureBar = loadSound('ouverture-bar.mp3');
-    ambiance = loadSound('bruit-ambiance.mp3');
-    decaps = loadSound('decapsuler.mp3');
-    decaps2 = loadSound('decapsuler-2.mp3');
+    // ouvertureBarSetup = loadSound('ouverture-bar.mp3');
+    // ambiance = loadSound('bruit-ambiance.mp3');
+    // decaps = loadSound('decapsuler.mp3');
+    // decaps2 = loadSound('decapsuler-2.mp3');
     leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
 }
 
