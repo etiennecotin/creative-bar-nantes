@@ -18,7 +18,7 @@ var decaps;
 var decaps2;
 var reset = false;
 
-var nbParticules = 300;
+var nbParticules = 100;
 
 
 
@@ -96,6 +96,8 @@ function draw() {
         if (reset) {
             bars[i].l = 15;
             bars[i].nbPersonne = [];
+            igros = undefined;
+            gros = 0;
         }
         if (bars[i].nbPersonne.length > gros) {
             gros = bars[i].nbPersonne.length
@@ -111,7 +113,6 @@ function draw() {
             // personnes[o].update();
             if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
                 bars[i].entrer(bars[i], personnes[o]);
-                // console.log(bars[i].nbPersonne)
             } else {
                 bars[i].sortir();
             }
@@ -178,7 +179,6 @@ class Particule {
         this.maxPerson = random(50, 100);
         this.text = name;
         this.l = l;
-        this.maxl = random(50, 100);
     }
     update() {
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
@@ -245,6 +245,9 @@ class Particule {
             personne.color = 0;
             personne.inside = true;
             this.l++;
+            if (this.l > this.maxPerson) {
+                this.l = this.maxPerson
+            }
         }
     }
 
