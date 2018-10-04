@@ -7,6 +7,8 @@ var parts = [];
 var r = 5;
 var l = 15;
 var bars = [];
+var gros = 0;
+var igros;
 
 var personnes = [];
 var music = ['Alan Walker - Fade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3','GALA - Freed from desire.mp3','Jain - Alright.mp3','Le Wanski - Bella Ciao.mp3','Lost Temple - Panda Dub.mp3','Martin Garrix  Brooks - Like I Do.mp3','MC Fioti - Bum Bum Tam Tam.mp3','OrelSan - San.mp3','White Town - Your Woman.mp3'];
@@ -14,6 +16,7 @@ var ouvertureBar;
 var ambiance;
 var decaps;
 var decaps2;
+var reset = false;
 
 var nbParticules = 50;
 
@@ -114,6 +117,18 @@ function draw() {
     for (let i = 0; i < bars.length; i++) {
         bars[i].update();
         parts[0].update();
+
+        if (reset) {
+            bars[i].l = 15;
+            bars[i].nbPersonne = [];
+            igros = undefined;
+            gros = 0;
+        }
+        if (bars[i].nbPersonne.length > gros) {
+            gros = bars[i].nbPersonne.length
+            igros = i;
+        }
+
         if (bars[i].coor.x != -100 && bars[i].coor.y != -100){
             if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < bars[i].l/1.5) {
                 bars[i].inside();
@@ -123,20 +138,37 @@ function draw() {
             for (let o = 0; o < personnes.length; o++) {
                 // personnes[o].update();
                 if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
-
                     bars[i].entrer(bars[i], personnes[o]);
                 } else {
-                    bars[i].sortir();
+                    bars[i].outside();
+                }
+                for (let o = 0; o < personnes.length; o++) {
+                    // personnes[o].update();
+                    if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
+
+                        bars[i].entrer(bars[i], personnes[o]);
+                    } else {
+                        bars[i].sortir();
+                    }
                 }
             }
         }
 
+        if (bars[igros] != undefined) {
+            bars[igros].bigger();
+            // console.log('Bar le plus gros :', igros, ' = ', bars[igros].text ,' avec', gros, 'personnes !');
+        }
     }
 
     for (let i = 0; i < personnes.length; i++) {
         personnes[i].update();
         personnes[i].draw();
+        if (reset && personnes[i].inside == true) {
+            personnes[i].outside();
+        }
+
     }
+    reset = false;
 
     getFavoriteBar(bars);
     playFavoriteBar(favoriteBar);
@@ -183,7 +215,6 @@ class Particule {
         this.maxPerson = random(50, 100);
         this.text = name;
         this.l = l;
-        this.maxl = random(50, 100);
     }
     update() {
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
@@ -238,7 +269,11 @@ class Particule {
         pop();
     }
     bigger() {
-        this.music.play();
+        push();
+        fill('red');
+        rect(this.coor.x, this.coor.y, this.l, this.l);
+        // this.music.play();
+        pop();
     }
       
     entrer(bar, personne){
@@ -246,7 +281,12 @@ class Particule {
         if (!bar.nbPersonne.includes(personne)) {
             bar.nbPersonne.push(personne)
             personne.vit = createVector(0, 0);
+            personne.color = 0;
+            personne.inside = true;
             this.l++;
+            if (this.l > this.maxPerson) {
+                this.l = this.maxPerson
+            }
         }
     }
 
@@ -261,6 +301,7 @@ class Particule {
 
 class Personnes {
     constructor(x, y) {
+
         this.initpos = {
             'x' :  x,
             'y' :  y
@@ -270,7 +311,8 @@ class Personnes {
         this.coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
         this.pos = createVector(this.coor.x, this.coor.y);
         this.vit = createVector(random(-5,5), random(-5, 5));
-        this.inBar = false;
+        this.color = 255;
+        this.inside = false;
         while(this.vit.mag()<1){
             this.vit = createVector(random(-2, 2), random(-2, 2));
         }
@@ -300,13 +342,20 @@ class Personnes {
 
     draw() {
         push();
-        translate(this.pos * random(0.1, 0.7));
+            translate(this.pos * random(0.1, 0.7));
 
-        let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
-        if (coor.x != -100 && coor.y != -100){
-            ellipse(this.pos.x, this.pos.y, r);
-        }
-
+            let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
+            if (coor.x != -100 && coor.y != -100){
+                fill(this.color);
+                ellipse(this.pos.x, this.pos.y, r);
+            }
+        pop();
+    }
+    outside() {
+        push();
+            this.color = 255;
+            fill(this.color);
+            this.vit = createVector(random(-2, 2), random(-2, 2));
         pop();
     }
 }
@@ -331,5 +380,5 @@ function doubleClicked() {
 }
 
 function mouseReleased() {
-
+    reset = true;
 }
