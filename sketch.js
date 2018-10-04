@@ -7,6 +7,8 @@ var parts = [];
 var r = 5;
 var l = 15;
 var bars = [];
+var gros = 0;
+var igros;
 
 var personnes = [];
 var music = ['Alan Walker - Fade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3','GALA - Freed from desire.mp3','Jain - Alright.mp3','Le Wanski - Bella Ciao.mp3','Lost Temple - Panda Dub.mp3','Martin Garrix  Brooks - Like I Do.mp3','MC Fioti - Bum Bum Tam Tam.mp3','OrelSan - San.mp3','White Town - Your Woman.mp3'];
@@ -95,6 +97,10 @@ function draw() {
             bars[i].l = 15;
             bars[i].nbPersonne = [];
         }
+        if (bars[i].nbPersonne.length > gros) {
+            gros = bars[i].nbPersonne.length
+            igros = i;
+        }
         // console.log(parts[j].pos.dist(bars[i].pos));
         if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < bars[i].l/1.5) {
             bars[i].inside();
@@ -110,6 +116,11 @@ function draw() {
                 bars[i].sortir();
             }
         }
+        if (bars[igros] != undefined) {
+            bars[igros].bigger();
+            // console.log('Bar le plus gros :', igros, ' = ', bars[igros].text ,' avec', gros, 'personnes !');
+        }
+        
     }
 
     for (let i = 0; i < personnes.length; i++) {
@@ -219,7 +230,11 @@ class Particule {
         pop();
     }
     bigger() {
-        this.music.play();
+        push();
+        fill('red');
+        rect(this.coor.x, this.coor.y, this.l, this.l);
+        // this.music.play();
+        pop();
     }
       
     entrer(bar, personne){
