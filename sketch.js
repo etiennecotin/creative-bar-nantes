@@ -23,6 +23,9 @@ var nbParticules = 50;
 var heures = 8;
 var minutes = 0;
 
+var nuit = false;
+
+var vitTemps = 333.332;
 
 // Create a new Mappa instance.
 let myMap;
@@ -33,7 +36,8 @@ const options = {
     lat: 47.212305,
     lng: -1.555840,
     zoom: 16,
-    style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png"
+    //style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png"
+    style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
 };
 
 var favoriteBar;
@@ -92,7 +96,8 @@ function setup() {
         })
     });
 
-    setInterval(chrono, 333.332);
+    //
+    setInterval(chrono, vitTemps);
 }
 
 function playFavoriteBar(favoriteBar) {
@@ -165,6 +170,10 @@ function draw() {
     playFavoriteBar(favoriteBar);
 
     new Horloge();
+    
+    if(nuit==false){
+       changerMap(); 
+    }
 }
 
 class Particule {
@@ -463,4 +472,15 @@ function mouseReleased() {
 
 function chrono() {
     this.minutes++;
+}
+
+function changerMap(){
+    var jour = heures + minutes/60;
+    
+    if(jour>19){
+        options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
+        myMap = mappa.tileMap(options);
+        myMap.overlay(canvas);
+        nuit=true;
+        }
 }
