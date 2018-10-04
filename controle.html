@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>p5js Test</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+    </script>
+
+    <script>
+
+        var params = function(){
+            this.nbParticules = 1;
+            this.nbBars = 5;
+        }
+
+
+        $(document).ready(function(){
+
+            var gui_param = new params();
+
+            var gui = new dat.gui.GUI();
+            var particules_controller = gui.add(gui_param, 'nbParticules', 1, 150).step(5);
+            var bars_controller = gui.add(gui_param, 'nbBars', 5, 40).step(1);
+
+            particules_controller.onChange(function(value){
+                socket.emit('particules', value);
+            });
+
+            bars_controller.onChange(function(value){
+                socket.emit('bars', value);
+            });
+
+
+        });
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
