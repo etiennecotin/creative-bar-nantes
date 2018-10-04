@@ -115,7 +115,7 @@ function draw() {
     for (let i = 0; i < personnes.length; i++) {
         personnes[i].update();
         personnes[i].draw();
-        if (reset && personnes[i].inside) {
+        if (reset && personnes[i].inside == true) {
             personnes[i].outside();
         }
         
@@ -301,6 +301,5 @@ function doubleClicked() {
 }
 
 function mouseReleased() {
-    console.log('Click - Reset');
     reset = true;
 }
