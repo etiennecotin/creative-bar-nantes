@@ -18,7 +18,7 @@ var decaps;
 var decaps2;
 var reset = false;
 
-var nbParticules = 150;
+var nbParticules = 50;
 
 var heures = 8;
 var minutes = 0;
@@ -116,13 +116,14 @@ function draw() {
         bars[i].update();
         parts[0].update();
 
-        if (reset) {
+        if (reset) { // If click mouse
             bars[i].l = 15;
             bars[i].nbPersonne = [];
+            
             igros = undefined;
             gros = 0;
         }
-        if (bars[i].nbPersonne.length > gros) {
+        if (bars[i].nbPersonne.length > gros) { //Stocke le bar le plus gros
             gros = bars[i].nbPersonne.length
             igros = i;
         }
@@ -135,7 +136,7 @@ function draw() {
             }
             for (let o = 0; o < personnes.length; o++) {
                 // personnes[o].update();
-                if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
+                if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l) {
                     bars[i].entrer(bars[i], personnes[o]);
                 } else {
                     // bars[i].outside();
@@ -274,12 +275,18 @@ class Bar {
         // this.music.play();
         pop();
     }
+    lower() {
+        push();
+        fill('white')
+        pop();
+    }
 
     entrer(bar, personne) {
 
         if (!bar.nbPersonne.includes(personne)) {
             bar.nbPersonne.push(personne)
             personne.vit = createVector(0, 0);
+            personne.dance(bar)
             personne.color = 0;
             personne.inside = true;
             this.l++;
@@ -336,8 +343,13 @@ class Personnes {
         }
     }
 
-    inside(bar) {
-
+    dance(bar) {        
+        if ((this.pos.x > bar.pos.x+(bar.l/2)) || (this.pos.x < bar.pos.x-(bar.l/2))) {
+            this.vit.x = -this.vit.x;
+        }
+        if ((this.pos.y > bar.pos.y+(bar.l/2)) || (this.pos.y < bar.pos.y-(bar.l/2))) {
+            this.vit.y = -this.vit.y;
+        }
     }
 
     draw() {
@@ -355,7 +367,8 @@ class Personnes {
         push();
             this.color = 255;
             fill(this.color);
-            this.vit = createVector(random(-2, 2), random(-2, 2));
+            this.vit = createVector(random(-5, 5), random(-5, 5));
+            this.inside = false;
         pop();
     }
 }
