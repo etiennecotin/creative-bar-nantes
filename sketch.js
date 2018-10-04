@@ -7,7 +7,9 @@ var l = 15;
 var bars = [];
 var gros = 0;
 var igros;
-
+var colorR = 255;
+var colorG = 255;
+var colorB = 255;
 var personnes = [];
 var music = ['Alan Walker - Fade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3', 'GALA - Freed from desire.mp3', 'Jain - Alright.mp3', 'Le Wanski - Bella Ciao.mp3', 'Lost Temple - Panda Dub.mp3', 'Martin Garrix  Brooks - Like I Do.mp3', 'MC Fioti - Bum Bum Tam Tam.mp3', 'OrelSan - San.mp3', 'White Town - Your Woman.mp3'];
 var ouvertureBar;
@@ -16,7 +18,7 @@ var decaps;
 var decaps2;
 var reset = false;
 
-var nbParticules = 50;
+var nbParticules = 150;
 
 var heures = 8;
 var minutes = 0;
@@ -213,14 +215,17 @@ class Bar {
         this.maxPerson = random(50, 100);
         this.text = name;
         this.l = l;
+        this.r = random(0, 255)
+        this.g = random(0, 255)
+        this.b = random(0, 255)
     }
     update() {
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         push();
         textAlign(CENTER);
-        textSize(15);
+        textSize(10);
         fill(0, 102, 153);
-        text(this.text, this.coor.x + 50, this.coor.y - 10);
+        text(this.text, this.coor.x + 0, this.coor.y - 10);
         pop();
         push();
             if (this.coor.x != -100 && this.coor.y != -100) {
@@ -269,7 +274,10 @@ class Bar {
     }
     bigger() {
         push();
-        fill('red');
+        fill(this.r, this.g, this.b);
+        colorR = this.r;
+        colorG = this.g;
+        colorB = this.b;
         rect(this.coor.x, this.coor.y, this.l, this.l);
         // this.music.play();
         pop();
@@ -316,6 +324,9 @@ class Personnes {
     }
 
     update() {
+        push();
+        
+        pop();
         let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
         if (coor.x != -100 && coor.y != -100){
             this.coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
@@ -343,7 +354,7 @@ class Personnes {
 
             let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
             if (coor.x != -100 && coor.y != -100){
-                fill(this.color);
+                fill(colorR, colorG, colorB);
                 ellipse(this.pos.x, this.pos.y, r);
             }
         pop();
