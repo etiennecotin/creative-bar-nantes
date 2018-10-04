@@ -23,7 +23,6 @@ var minutes = 0;
 
 
 // Create a new Mappa instance.
-// var mappa = new Mappa('Map-Provider', key);
 let myMap;
 let canvas;
 // Create a new Mappa instance using Leaflet.
@@ -48,7 +47,6 @@ function preload() {
 }
 
 function setup() {
-
 
     canvas = createCanvas(windowWidth, windowHeight);
 
@@ -92,7 +90,6 @@ function setup() {
         })
     });
 
-
     setInterval(chrono, 333.332);
 }
 
@@ -103,7 +100,6 @@ function playFavoriteBar(favoriteBar) {
         leWanski.play()
     }
 }
-
 
 function draw() {
     // background(0);
@@ -117,7 +113,6 @@ function draw() {
     for (let i = 0; i < bars.length; i++) {
         bars[i].update();
         parts[0].update();
-// <<<<<<< HEAD
 
         if (reset) {
             bars[i].l = 15;
@@ -133,19 +128,6 @@ function draw() {
         if (bars[i].coor.x != -100 && bars[i].coor.y != -100){
             if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < bars[i].l/1.5) {
                 bars[i].inside();
-// =======
-//         // console.log(parts[j].pos.dist(bars[i].pos));
-//         if (dist(bars[i].coor.x, bars[i].coor.y, parts[0].pos.x, parts[0].pos.y) < bars[i].l / 1.5) {
-//             bars[i].inside();
-//         } else {
-//             bars[i].outside();
-//         }
-//         for (let o = 0; o < personnes.length; o++) {
-//             // personnes[o].update();
-//             if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l / 1.5) {
-//                 bars[i].entrer(bars[i], personnes[o]);
-//                 // console.log(bars[i].nbPersonne)
-// >>>>>>> origin/quentinPersonnesBars
             } else {
                 bars[i].outside();
             }
@@ -276,7 +258,6 @@ class Bar {
     }
     outside() {
         push();
-// <<<<<<< HEAD
             this.song = 0;
             // this.ambiance.stop();
             // this.ouvertureBar.stop();
@@ -284,15 +265,6 @@ class Bar {
             // this.decaps2.stop();
             fill('#fff');
             // rect(this.pos.x, this.pos.y, this.l, this.l);
-// =======
-//         this.song = 0;
-//         this.ambiance.stop();
-//         this.ouvertureBar.stop();
-//         this.decaps.stop();
-//         this.decaps2.stop();
-//         fill('#fff');
-//         // rect(this.pos.x, this.pos.y, this.l, this.l);
-// >>>>>>> origin/quentinPersonnesBars
         pop();
     }
     bigger() {
@@ -333,8 +305,6 @@ class Personnes {
             'x' :  x,
             'y' :  y
         };
-        // this.initpos = createVector(x, y);
-        // console.log(this.initpos)
         this.coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
         this.pos = createVector(this.coor.x, this.coor.y);
         this.vit = createVector(random(-5,5), random(-5, 5));
@@ -472,14 +442,9 @@ function doubleClicked() {
 }
 
 function mouseReleased() {
-// <<<<<<< HEAD
     reset = true;
-// =======
-
 }
 
 function chrono() {
     this.minutes++;
-    console.log(this.minutes);
-// >>>>>>> origin/quentinPersonnesBars
 }
