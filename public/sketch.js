@@ -7,7 +7,9 @@ var l = 15;
 var bars = [];
 var gros = 0;
 var igros;
-
+var colorR = 255;
+var colorG = 255;
+var colorB = 255;
 var personnes = [];
 var music = ['Alan Walker - Fade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3', 'GALA - Freed from desire.mp3', 'Jain - Alright.mp3', 'Le Wanski - Bella Ciao.mp3', 'Lost Temple - Panda Dub.mp3', 'Martin Garrix  Brooks - Like I Do.mp3', 'MC Fioti - Bum Bum Tam Tam.mp3', 'OrelSan - San.mp3', 'White Town - Your Woman.mp3'];
 var ouvertureBar;
@@ -21,6 +23,9 @@ var nbParticules = 50;
 var heures = 8;
 var minutes = 0;
 
+var nuit = false;
+
+var vitTemps = 333.332;
 
 // Create a new Mappa instance.
 let myMap;
@@ -31,12 +36,11 @@ const options = {
     lat: 47.212305,
     lng: -1.555840,
     zoom: 16,
-    style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png"
+    //style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png"
+    style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
 };
 
-var favoriteBar;
-
-// var mapBorder = [];
+// var favoriteBar;
 
 var nbParticules2 = 1;
 var nbBars = 1;
@@ -47,6 +51,7 @@ socket.on('nbParticules', function(val){
 socket.on('nbBars', function(val){
     nbBars = val;
 });
+
 
 function preload() {
     // ouvertureBar = loadSound('ouverture-bar.mp3');
@@ -87,33 +92,31 @@ function setup() {
         })
     });
 
-    setInterval(chrono, 333.332);
-}
 
-function playFavoriteBar(favoriteBar) {
-
-    if (favoriteBar != bars[0]) {
-
-        leWanski.play()
-    }
+    setInterval(chrono, vitTemps);
 }
 
 function draw() {
     // background(0);
     clear();
 
+    // if (myMap.map){
+    //     mapBorder = myMap.map.getBounds();
+    // }
+
 
     for (let i = 0; i < bars.length; i++) {
         bars[i].update();
         parts[0].update();
 
-        if (reset) {
+        if (reset) { // If click mouse
             bars[i].l = 15;
             bars[i].nbPersonne = [];
+
             igros = undefined;
             gros = 0;
         }
-        if (bars[i].nbPersonne.length > gros) {
+        if (bars[i].nbPersonne.length > gros) { //Stocke le bar le plus gros
             gros = bars[i].nbPersonne.length
             igros = i;
         }
@@ -126,19 +129,11 @@ function draw() {
             }
             for (let o = 0; o < personnes.length; o++) {
                 // personnes[o].update();
-                if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
+                if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l) {
                     bars[i].entrer(bars[i], personnes[o]);
                 } else {
-                    bars[i].outside();
-                }
-                for (let o = 0; o < personnes.length; o++) {
-                    // personnes[o].update();
-                    if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l/1.5) {
-
-                        bars[i].entrer(bars[i], personnes[o]);
-                    } else {
-                        bars[i].sortir();
-                    }
+                    // bars[i].outside();
+                    // bars[i].sortir();
                 }
             }
         }
@@ -159,10 +154,11 @@ function draw() {
     }
     reset = false;
 
-    getFavoriteBar(bars);
-    playFavoriteBar(favoriteBar);
-
     new Horloge();
+
+    if(nuit==false){
+        changerMap();
+    }
 }
 
 class Particule {
@@ -206,43 +202,46 @@ class Bar {
         this.maxPerson = random(50, 100);
         this.text = name;
         this.l = l;
+        this.r = random(0, 255)
+        this.g = random(0, 255)
+        this.b = random(0, 255)
     }
     update() {
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         push();
         textAlign(CENTER);
-        textSize(15);
+        textSize(10);
         fill(0, 102, 153);
-        text(this.text, this.coor.x + 50, this.coor.y - 10);
+        text(this.text, this.coor.x + 0, this.coor.y - 10);
         pop();
         push();
-            if (this.coor.x != -100 && this.coor.y != -100) {
-                // console.log(this.coor.x);
-                rect(this.coor.x, this.coor.y, this.l, this.l);
-            }
+        if (this.coor.x != -100 && this.coor.y != -100) {
+            // console.log(this.coor.x);
+            rect(this.coor.x, this.coor.y, this.l, this.l);
+        }
         pop();
 
         // rect(this.pos.x, this.pos.y, this.l, this.l);
     }
     inside() {
         push();
-            this.song += 1;
-            // console.log('song', this.song);
-            if (this.song == 1) {
-                // this.ouvertureBar.play();
-                // this.ambiance.play();
-                // this.ambiance.setVolume(0.5);
-            } else if(this.song%1450 == 0) {
-                // this.ambiance.play();
-            } else if(this.song%150 == 0) {
-                var decaps_switch = Math.round(random(0, 10));
+        this.song += 1;
+        // console.log('song', this.song);
+        if (this.song == 1) {
+            // this.ouvertureBar.play();
+            // this.ambiance.play();
+            // this.ambiance.setVolume(0.5);
+        } else if(this.song%1450 == 0) {
+            // this.ambiance.play();
+        } else if(this.song%150 == 0) {
+            var decaps_switch = Math.round(random(0, 10));
 
-                if (decaps_switch%2 == 0) {
-                    // this.decaps.play();
-                } else {
-                    // this.decaps2.play();
-                }
+            if (decaps_switch%2 == 0) {
+                // this.decaps.play();
+            } else {
+                // this.decaps2.play();
             }
+        }
         // }
 
         fill('#fae');
@@ -251,20 +250,28 @@ class Bar {
     }
     outside() {
         push();
-            this.song = 0;
-            // this.ambiance.stop();
-            // this.ouvertureBar.stop();
-            // this.decaps.stop();
-            // this.decaps2.stop();
-            fill('#fff');
-            // rect(this.pos.x, this.pos.y, this.l, this.l);
+        this.song = 0;
+        // this.ambiance.stop();
+        // this.ouvertureBar.stop();
+        // this.decaps.stop();
+        // this.decaps2.stop();
+        fill('#fff');
+        // rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
     }
     bigger() {
         push();
-        fill('red');
+        fill(this.r, this.g, this.b);
+        colorR = this.r;
+        colorG = this.g;
+        colorB = this.b;
         rect(this.coor.x, this.coor.y, this.l, this.l);
         // this.music.play();
+        pop();
+    }
+    lower() {
+        push();
+        fill('white')
         pop();
     }
 
@@ -273,6 +280,7 @@ class Bar {
         if (!bar.nbPersonne.includes(personne)) {
             bar.nbPersonne.push(personne)
             personne.vit = createVector(0, 0);
+            personne.dance(bar)
             personne.color = 0;
             personne.inside = true;
             this.l++;
@@ -309,6 +317,9 @@ class Personnes {
     }
 
     update() {
+        push();
+
+        pop();
         let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
         if (coor.x != -100 && coor.y != -100){
             this.coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
@@ -326,26 +337,32 @@ class Personnes {
         }
     }
 
-    inside(bar) {
-
+    dance(bar) {
+        if ((this.pos.x > bar.pos.x+(bar.l/2)) || (this.pos.x < bar.pos.x-(bar.l/2))) {
+            this.vit.x = -this.vit.x;
+        }
+        if ((this.pos.y > bar.pos.y+(bar.l/2)) || (this.pos.y < bar.pos.y-(bar.l/2))) {
+            this.vit.y = -this.vit.y;
+        }
     }
 
     draw() {
         push();
-            translate(this.pos * random(0.1, 0.7));
+        translate(this.pos * random(0.1, 0.7));
 
-            let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
-            if (coor.x != -100 && coor.y != -100){
-                fill(this.color);
-                ellipse(this.pos.x, this.pos.y, r);
-            }
+        let coor = myMap.latLngToPixel(this.initpos.x,  this.initpos.y);
+        if (coor.x != -100 && coor.y != -100){
+            fill(colorR, colorG, colorB);
+            ellipse(this.pos.x, this.pos.y, r);
+        }
         pop();
     }
     outside() {
         push();
-            this.color = 255;
-            fill(this.color);
-            this.vit = createVector(random(-2, 2), random(-2, 2));
+        this.color = 255;
+        fill(this.color);
+        this.vit = createVector(random(-5, 5), random(-5, 5));
+        this.inside = false;
         pop();
     }
 }
@@ -415,21 +432,6 @@ class Horloge {
     }
 }
 
-function getFavoriteBar(bars) {
-
-    bars.sort(compare)
-
-    favoriteBar = bars[0];
-}
-
-function compare(a, b) {
-    if (a.nbPersonne.length < b.nbPersonne.length)
-        return -1;
-    if (a.nbPersonne.length > b.nbPersonne.length)
-        return 1;
-    return 0;
-}
-
 function doubleClicked() {
 
 }
@@ -440,4 +442,15 @@ function mouseReleased() {
 
 function chrono() {
     this.minutes++;
+}
+
+function changerMap(){
+    var jour = heures + minutes/60;
+
+    if(jour>19){
+        options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
+        myMap = mappa.tileMap(options);
+        myMap.overlay(canvas);
+        nuit=true;
+    }
 }
