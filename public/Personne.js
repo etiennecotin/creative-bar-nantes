@@ -11,9 +11,9 @@ class Personnes {
         this.vit = createVector(random(-5,5), random(-5, 5));
         this.color = 255;
         this.inside = false;
-        while(this.vit.mag()<1){
-            this.vit = createVector(random(-2, 2), random(-2, 2));
-        }
+        // while(this.vit.mag()<1){
+        //     this.vit = createVector(random(-2, 2), random(-2, 2));
+        // }
     }
 
     update() {
@@ -29,10 +29,10 @@ class Personnes {
             this.initpos.y = px.lng;
         }
 
-        if ((this.pos.x > width) || (this.pos.x < 0)) {
+        if ((this.pos.x >= width) || (this.pos.x <= 0)) {
             this.vit.x = -this.vit.x;
         }
-        if ((this.pos.y > height) || (this.pos.y < 0)) {
+        if ((this.coor.y >= height) || (this.coor.y <= 0)) {
             this.vit.y = -this.vit.y;
         }
     }
