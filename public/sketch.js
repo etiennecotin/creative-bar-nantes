@@ -142,7 +142,7 @@ function setup() {
 function draw() {
     // background(0);
     clear();
-    console.log('heures : ',heures+(minutes/60));
+    // console.log('heures : ',heures+(minutes/60));
     if (heures+(minutes/60) >= 24) {
         minutes = 0;
         heures = 0;
