@@ -84,7 +84,7 @@ class Bar {
         colorR = this.r;
         colorG = this.g;
         colorB = this.b;
-        rect(this.coor.x, this.coor.y, this.l, this.l);
+        rect(this.coor.x, this.coor.y, this.l+rms*ampMouvementBar, this.l+rms*ampMouvementBar);
         // this.music.play();
         pop();
     }
