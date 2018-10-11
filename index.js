@@ -40,6 +40,14 @@ io.on('connection', function(socket){
         // console.log('reset: ' + msg);
         io.emit("reset", msg);
     });
+    socket.on('clear', function(msg){
+        // console.log('reset: ' + msg);
+        io.emit("clear", msg);
+    });
+    socket.on('deplacementGeo', function(msg){
+        // console.log('reset: ' + msg);
+        io.emit("deplacementGeo", msg);
+    });
 });
 
 http.listen(3000, function(){
