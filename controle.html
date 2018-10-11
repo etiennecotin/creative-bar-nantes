@@ -22,6 +22,8 @@
             this.nbBars = 5;
             this.ampMouvementBar = 1;
             this.playSound = false;
+            this.clear = true;
+            this.deplacementGeo = false;
             this.reset = function() {
                 socket.emit('reset', true);
             };
@@ -38,6 +40,8 @@
             var ampMouvementBar_controller = gui.add(gui_param, 'ampMouvementBar', 1, 40).step(1);
             var playSound_controller = gui.add(gui_param, 'playSound');
             var reset_controller = gui.add(gui_param, 'reset');
+            var clear_controller = gui.add(gui_param, 'clear');
+            var deplacementGeo_controller = gui.add(gui_param, 'deplacementGeo');
 
             particules_controller.onChange(function(value){
                 socket.emit('particules', value);
@@ -51,6 +55,12 @@
             });
             playSound_controller.onChange(function(value){
                 socket.emit('playSound', value);
+            });
+            clear_controller.onChange(function(value){
+                socket.emit('clear', value);
+            });
+            deplacementGeo_controller.onChange(function(value){
+                socket.emit('deplacementGeo', value);
             });
 
 

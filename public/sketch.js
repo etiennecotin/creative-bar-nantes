@@ -56,7 +56,9 @@ var ampMouvementBar = 1;
 
 var playSound = false;
 
-// var favoriteBar;
+var clearMap = true;
+
+var deplacementGeo = false;
 
 var nbPersonnes = 1;
 var nbBars = 5;
@@ -81,6 +83,12 @@ socket.on('playSound', function(val){
 });
 socket.on('reset', function(val){
     reset = val;
+});
+socket.on('clear', function(val){
+    clearMap = val;
+});
+socket.on('deplacementGeo', function(val){
+    deplacementGeo = val;
 });
 
 function preload() {
@@ -133,7 +141,9 @@ function setup() {
 
 function draw() {
     // background(0);
-    clear();
+    if (clearMap) {
+        clear();
+    }
     if(nuit==false){
         changerMap();
     }
