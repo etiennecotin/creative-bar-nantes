@@ -22,7 +22,10 @@
             this.nbBars = 5;
             this.ampMouvementBar = 1;
             this.playSound = false;
-        }
+            this.reset = function() {
+                socket.emit('reset', true);
+            };
+        };
 
 
         $(document).ready(function(){
@@ -34,12 +37,14 @@
             var bars_controller = gui.add(gui_param, 'nbBars', 5, 40).step(1);
             var ampMouvementBar_controller = gui.add(gui_param, 'ampMouvementBar', 1, 40).step(1);
             var playSound_controller = gui.add(gui_param, 'playSound');
+            var reset_controller = gui.add(gui_param, 'reset');
 
             particules_controller.onChange(function(value){
                 socket.emit('particules', value);
             });
             bars_controller.onChange(function(value){
                 socket.emit('bars', value);
+                socket.emit('reset', true);
             });
             ampMouvementBar_controller.onChange(function(value){
                 socket.emit('ampMouvementBar', value);
