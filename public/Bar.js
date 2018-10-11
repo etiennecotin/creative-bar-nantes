@@ -2,7 +2,7 @@
 
 // export default class Bar {
 class Bar {
-    constructor(x, y, name) {
+    constructor(x, y, name, music) {
 
         this.pos = {
             'x': x,
@@ -17,6 +17,7 @@ class Bar {
         this.decaps = loadSound('decapsuler.mp3');        
         this.nbPersonne = [];
         this.maxPerson = random(50, 100);
+        this.music = music;
         this.text = name;
         this.l = l;
         this.r = random(0, 255)
@@ -83,12 +84,20 @@ class Bar {
         colorG = this.g;
         colorB = this.b;
         rect(this.coor.x, this.coor.y, this.l+rms*ampMouvementBar, this.l+rms*ampMouvementBar);
-        // this.music.play();
+        this.music.setVolume(1);
+        if (!this.music._playing) {
+            this.music.play();
+        }
         pop();
     }
     lower() {
         push();
-        fill('white')
+        fill('white');
+        // console.log('name', this.text, 'this.music._playing', this.music._playing);
+        if (this.music._playing) {
+            // console.log('Music stop bar :', this.text, 'this.music._playing', this.music._playing);
+            this.music.setVolume(0);
+        }
         pop();
     }
 
