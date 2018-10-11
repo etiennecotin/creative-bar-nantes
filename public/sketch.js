@@ -276,7 +276,7 @@ function draw() {
             } else {
                 bars[i].outside();
             }
-            for (let o = 0; o < personnes.length; o++) {
+            for (let o = 0; o < nbPersonnes; o++) {
                 // personnes[o].update();
                 if (dist(bars[i].coor.x, bars[i].coor.y, personnes[o].pos.x, personnes[o].pos.y) < bars[i].l) {
                     bars[i].entrer(bars[i], personnes[o]);
@@ -294,7 +294,7 @@ function draw() {
         }
     }
 
-    for (let i = 0; i < personnes.length; i++) {
+    for (let i = 0; i < nbPersonnes; i++) {
         personnes[i].update();
         personnes[i].draw();
         if (reset && personnes[i].inside == true) {
