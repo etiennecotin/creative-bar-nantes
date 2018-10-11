@@ -21,7 +21,7 @@ var decaps;
 var decaps2;
 var reset = false;
 
-var nbParticules = 50;
+var nbParticules = 150;
 
 var heures = 18;
 var minutes = 0;
@@ -58,11 +58,11 @@ var playSound = false;
 
 // var favoriteBar;
 
-var nbParticules2 = 1;
-var nbBars = 1;
+var nbPersonnes = 1;
+var nbBars = 5;
 
 socket.on('nbParticules', function(val){
-    nbParticules2 = val;
+    nbPersonnes = val;
 });
 socket.on('nbBars', function(val){
     nbBars = val;
@@ -78,6 +78,9 @@ socket.on('playSound', function(val){
     } else {
         song.pause()
     }
+});
+socket.on('reset', function(val){
+    reset = val;
 });
 
 function preload() {
@@ -148,8 +151,10 @@ function draw() {
     // }
     // var rms2 = (total/spectrum.length)*100;
     rms = peakDetect.penergy*50;
-
-    for (let i = 0; i < bars.length; i++) {
+    if (bars.length == 0){
+        nbBars = 0;
+    }
+    for (let i = 0; i < nbBars; i++) {
         bars[i].update();
         parts[0].update();
 
@@ -243,6 +248,7 @@ function changerMap(){
         fill('rgba(0,0,0, 0.75)')
         rect(width/2, height/2, width, height);
         pop();
+        // let mappa = new Mappa('Leaflet');
         // options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
         // myMap = mappa.tileMap(options);
         // myMap.overlay(canvas);

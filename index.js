@@ -36,6 +36,10 @@ io.on('connection', function(socket){
         // console.log('playSound: ' + msg);
         io.emit("playSound", msg);
     });
+    socket.on('reset', function(msg){
+        // console.log('reset: ' + msg);
+        io.emit("reset", msg);
+    });
 });
 
 http.listen(3000, function(){
