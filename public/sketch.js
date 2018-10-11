@@ -28,6 +28,7 @@ var minutes = 0;
 
 var nuit = false;
 
+var tramPlay = 0;
 // var vitTemps = 333.332;
 var vitTemps = 150.332;
 
@@ -86,7 +87,7 @@ function preload() {
     // decaps = loadSound('decapsuler.mp3');
     // decaps2 = loadSound('decapsuler-2.mp3');
     // leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
-
+    tram = loadSound('tram.mp3');
     song = loadSound('zik/Le Wanski - Bella Ciao.mp3');
     // song = loadSound('rone-bye-bye_macadam.mp3');
 
@@ -124,7 +125,6 @@ function setup() {
         })
     });
 
-
     setInterval(chrono, vitTemps);
 }
 
@@ -134,6 +134,34 @@ function draw() {
     if(nuit==false){
         changerMap();
     }
+    tramPlay += 1
+       if (heures > 6 && heures < 12) {
+           if (tramPlay%1100 == 0) {
+               console.log('tram play 6-12');
+               tram.play();
+           }
+       } else if(heures > 12 && heures < 20) {           
+        if (tramPlay%800 == 0) {
+            console.log('tram play 12-20');
+            tram.play();
+        }
+       } else if(heures > 20 && heures < 22) {
+        if (tramPlay%1000 == 0) {
+            console.log('tram play 20-22');
+            tram.play();
+        }
+       } else if(heures > 22 && heures < 23) {
+        if (tramPlay%1350 == 0) {
+            console.log('tram play 22-23');
+            tram.play();
+        }
+       } else if(heures >= 0 && heures < 2) {
+        if (tramPlay%1350 == 0) {
+            console.log('tram play 0-2');
+            tram.play();
+        }
+       }
+       
 
     // if (myMap.map){
     //     mapBorder = myMap.map.getBounds();
