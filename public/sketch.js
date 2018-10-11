@@ -61,11 +61,22 @@ var playSound = false;
 var nbPersonnes = 1;
 var nbBars = 5;
 
+var barOuvertSong;
+var barFermeSong;
+
+var nbBarsBefore;
+
 socket.on('nbParticules', function(val){
     nbPersonnes = val;
 });
 socket.on('nbBars', function(val){
+    nbBarsBefore = nbBars;
     nbBars = val;
+    if(nbBars>nbBarsBefore){
+        barOuvertSong.play();
+       }else if(nbBars<nbBarsBefore){
+           barFermeSong.play();
+       }
 });
 socket.on('ampMouvementBar', function(val){
     ampMouvementBar = val;
@@ -83,6 +94,13 @@ socket.on('reset', function(val){
     reset = val;
 });
 
+
+/*if(ouvert==false){
+        barOuvertSong.play();
+            ouvert=true;
+        }*/
+
+
 function preload() {
     // ouvertureBar = loadSound('ouverture-bar.mp3');
     // ambiance = loadSound('bruit-ambiance.mp3');
@@ -92,6 +110,9 @@ function preload() {
 
     song = loadSound('zik/Le Wanski - Bella Ciao.mp3');
     // song = loadSound('rone-bye-bye_macadam.mp3');
+    
+    barOuvertSong = loadSound('ouverture-bar.mp3');
+    barFermeSong = loadSound('close.mp3');
 
     fft = new p5.FFT();
     peakDetect = new p5.PeakDetect();

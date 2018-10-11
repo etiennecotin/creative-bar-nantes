@@ -40,6 +40,7 @@ class Bar {
 
         // rect(this.pos.x, this.pos.y, this.l, this.l);
     }
+    
     inside() {
         push();
         this.song += 1;
