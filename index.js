@@ -28,6 +28,14 @@ io.on('connection', function(socket){
         // console.log('particules: ' + msg);
         io.emit("nbBars", msg);
     });
+    socket.on('ampMouvementBar', function(msg){
+        // console.log('particules: ' + msg);
+        io.emit("ampMouvementBar", msg);
+    });
+    socket.on('playSound', function(msg){
+        // console.log('playSound: ' + msg);
+        io.emit("playSound", msg);
+    });
 });
 
 http.listen(3000, function(){

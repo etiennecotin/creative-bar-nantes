@@ -39,10 +39,22 @@ const mappa = new Mappa('Leaflet');
 const options = {
     lat: 47.212305,
     lng: -1.555840,
-    zoom: 16,
+    zoom: 15,
     //style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png"
     style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
 };
+
+//declaration musique
+var song, analyzer;
+var fft, // Allow us to analyze the song
+    numBars = 1024, // The number of bars to use; power of 2 from 16 to 1024
+    song,
+    rms = 0; // The p5 sound object
+
+
+var ampMouvementBar = 1;
+
+var playSound = false;
 
 // var favoriteBar;
 
@@ -55,6 +67,32 @@ socket.on('nbParticules', function(val){
 socket.on('nbBars', function(val){
     nbBars = val;
 });
+socket.on('ampMouvementBar', function(val){
+    ampMouvementBar = val;
+});
+socket.on('playSound', function(val){
+    playSound = val;
+
+    if (val){
+        song.play()
+    } else {
+        song.pause()
+    }
+});
+
+function preload() {
+    // ouvertureBar = loadSound('ouverture-bar.mp3');
+    // ambiance = loadSound('bruit-ambiance.mp3');
+    // decaps = loadSound('decapsuler.mp3');
+    // decaps2 = loadSound('decapsuler-2.mp3');
+    // leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
+
+    song = loadSound('zik/Le Wanski - Bella Ciao.mp3');
+    // song = loadSound('rone-bye-bye_macadam.mp3');
+
+    fft = new p5.FFT();
+    peakDetect = new p5.PeakDetect();
+}
 
 function setup() {
 
@@ -100,7 +138,16 @@ function draw() {
     // if (myMap.map){
     //     mapBorder = myMap.map.getBounds();
     // }
+// peakDetect accepts an fft post-analysis
+    var spectrum = fft.analyze();
+    peakDetect.update(fft);
 
+    total = 0;
+    // for (let i = 0; i< spectrum.length; i+=10){
+    //     total += spectrum[i];
+    // }
+    // var rms2 = (total/spectrum.length)*100;
+    rms = peakDetect.penergy*50;
 
     for (let i = 0; i < bars.length; i++) {
         bars[i].update();
@@ -199,6 +246,10 @@ function changerMap(){
         // options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
         // myMap = mappa.tileMap(options);
         // myMap.overlay(canvas);
-        // nuit=true;
+        myMap.tiles._url = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
+        myMap.tiles._tileZoom = 16;
+        myMap.options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
+        myMap.options.zoom = 16;
+        nuit=true;
     }
 }
