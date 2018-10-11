@@ -23,7 +23,7 @@ var reset = false;
 
 var nbParticules = 150;
 
-var heures = 18;
+var heures = 8;
 var minutes = 0;
 
 var nuit = false;
