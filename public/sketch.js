@@ -23,7 +23,7 @@ var reset = false;
 
 var nbParticules = 50;
 
-var heures = 8;
+var heures = 18;
 var minutes = 0;
 
 var nuit = false;
@@ -56,15 +56,6 @@ socket.on('nbBars', function(val){
     nbBars = val;
 });
 
-
-function preload() {
-    // ouvertureBar = loadSound('ouverture-bar.mp3');
-    // ambiance = loadSound('bruit-ambiance.mp3');
-    // decaps = loadSound('decapsuler.mp3');
-    // decaps2 = loadSound('decapsuler-2.mp3');
-    // leWanski = loadSound('zik/Le Wanski - Bella Ciao.mp3');
-}
-
 function setup() {
 
     canvas = createCanvas(windowWidth, windowHeight);
@@ -73,7 +64,6 @@ function setup() {
     myMap.overlay(canvas);
 
     rectMode(CENTER);
-
     parts.push(new Particule((width / 2) + 0, (height / 2) + 0));
 
     // parts.push(new Particule(0, 0));
@@ -89,9 +79,9 @@ function setup() {
             let name = element.name;
             // bars.push(new Bar(lat, lng, name, music[index]));
             if (index > music.length - 1) {
-                bars.push(new Bar(lat, lng, name, random(0, music.length)));
+                bars.push(new Bar(lat, lng, name));
             } else {
-                bars.push(new Bar(lat, lng, name, index));
+                bars.push(new Bar(lat, lng, name));
             }
         })
     });
@@ -103,6 +93,9 @@ function setup() {
 function draw() {
     // background(0);
     clear();
+    if(nuit==false){
+        changerMap();
+    }
 
     // if (myMap.map){
     //     mapBorder = myMap.map.getBounds();
@@ -160,9 +153,6 @@ function draw() {
 
     new Horloge();
 
-    if(nuit==false){
-        changerMap();
-    }
 }
 
 class Particule {
@@ -202,9 +192,13 @@ function changerMap(){
     var jour = heures + minutes/60;
 
     if(jour>19){
-        options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
-        myMap = mappa.tileMap(options);
-        myMap.overlay(canvas);
-        nuit=true;
+        push();
+        fill('rgba(0,0,0, 0.75)')
+        rect(width/2, height/2, width, height);
+        pop();
+        // options.style = "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png";
+        // myMap = mappa.tileMap(options);
+        // myMap.overlay(canvas);
+        // nuit=true;
     }
 }

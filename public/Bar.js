@@ -2,7 +2,7 @@
 
 // export default class Bar {
 class Bar {
-    constructor(x, y, name, music) {
+    constructor(x, y, name) {
 
         this.pos = {
             'x': x,
@@ -11,12 +11,10 @@ class Bar {
         // this.pos = createVector(x, y);
         this.coor = myMap.latLngToPixel(this.pos.x, this.pos.y);
         this.song = 0;
-        // this.ambiance = loadSound('bruit-ambiance.mp3');
-        // this.ouvertureBar = loadSound('ouverture-bar.mp3');
-        // this.decaps2 = loadSound('decapsuler-2.mp3');
-        // this.decaps = loadSound('decapsuler.mp3');
-        // this.music = loadSound(music);
-        this.music = music;
+        this.ambiance = loadSound('bruit-ambiance.mp3');
+        this.ouvertureBar = loadSound('ouverture-bar.mp3');
+        this.decaps2 = loadSound('decapsuler-2.mp3');
+        this.decaps = loadSound('decapsuler.mp3');        
         this.nbPersonne = [];
         this.maxPerson = random(50, 100);
         this.text = name;
@@ -47,18 +45,18 @@ class Bar {
         this.song += 1;
         // console.log('song', this.song);
         if (this.song == 1) {
-            // this.ouvertureBar.play();
-            // this.ambiance.play();
-            // this.ambiance.setVolume(0.5);
+            this.ouvertureBar.play();
+            this.ambiance.play();
+            this.ambiance.setVolume(0.5);
         } else if(this.song%1450 == 0) {
-            // this.ambiance.play();
+            this.ambiance.play();
         } else if(this.song%150 == 0) {
             var decaps_switch = Math.round(random(0, 10));
 
             if (decaps_switch%2 == 0) {
-                // this.decaps.play();
+                this.decaps.play();
             } else {
-                // this.decaps2.play();
+                this.decaps2.play();
             }
         }
         // }
@@ -70,10 +68,10 @@ class Bar {
     outside() {
         push();
         this.song = 0;
-        // this.ambiance.stop();
-        // this.ouvertureBar.stop();
-        // this.decaps.stop();
-        // this.decaps2.stop();
+        this.ambiance.stop();
+        this.ouvertureBar.stop();
+        this.decaps.stop();
+        this.decaps2.stop();
         fill('#fff');
         // rect(this.pos.x, this.pos.y, this.l, this.l);
         pop();
@@ -85,7 +83,6 @@ class Bar {
         colorG = this.g;
         colorB = this.b;
         rect(this.coor.x, this.coor.y, this.l, this.l);
-        // this.music.play();
         pop();
     }
     lower() {
