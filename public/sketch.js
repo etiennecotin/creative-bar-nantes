@@ -178,13 +178,12 @@ function draw() {
         minutes = 0;
         heures = 0;
     }
-    if (heures > 9 && heures < 19) {
-        nuit=true;//jour
+    if (heures+(minutes/60) > 9 && heures+(minutes/60) < 19) {
+        nuit=false;//jour
     } else {
-        nuit=false;//nuit
+        nuit=true;//nuit
     }
     if(nuit==false){//jour
-        console.log('Jour');
         if (opacity > 0) {
             opacity -= 0.005;
         } else {
@@ -266,8 +265,7 @@ function draw() {
             igros = i;
             // console.log('!!! music on : ',bars[i].text);
         } else if(bars[i] == bars[gros]) {
-            console.log('1');
-            
+            //RIEN !            
         } else {
             bars[i].lower();
         }
