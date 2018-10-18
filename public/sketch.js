@@ -82,7 +82,7 @@ socket.on('nbBars', function(val){
        }
 });
 socket.on('ampMouvementBar', function(val){
-    ampMouvementBar = val;
+    ampMouvementBar = val;    
 });
 socket.on('playSound', function(val){
     playSound = val;
@@ -98,9 +98,13 @@ socket.on('reset', function(val){
 });
 socket.on('clear', function(val){
     clearMap = val;
+    console.log('clear', clearMap);
+    
 });
 socket.on('deplacementGeo', function(val){
     deplacementGeo = val;
+    console.log('deplacementGeo', deplacementGeo);
+    
 });
 
 
@@ -340,3 +344,172 @@ function mouseReleased() {
 function chrono() {
     this.minutes++;
 }
+
+
+/****** TEST  ******/
+(function(){
+    var log = console.log.bind(console), keyData = document.getElementById('key_data'), 
+            deviceInfoInputs = document.getElementById('inputs'), deviceInfoOutputs = document.getElementById('outputs'), 
+            device = document.querySelector('.device-name'), midi;
+
+    // request MIDI access
+    if(navigator.requestMIDIAccess){
+        navigator.requestMIDIAccess({sysex: false}).then(onMIDISuccess, onMIDIFailure);
+    }
+    else {
+        alert("No MIDI support in your browser.");
+    }
+
+    // midi functions
+    function onMIDISuccess(midiAccess){
+        midi = midiAccess;
+        var inputs = midi.inputs.values();
+        // loop through all inputs
+        for(var input = inputs.next(); input && !input.done; input = inputs.next()){
+            // listen for midi messages
+            input.value.onmidimessage = onMIDIMessage;
+
+            listInputs(input);
+        }
+        // listen for connect/disconnect message
+        midi.onstatechange = onStateChange;
+
+        showMIDIPorts(midi);
+    }
+
+    function onMIDIMessage(event){
+        var data = event.data, 
+                cmd = data[0] >> 4,
+                channel = data[0] & 0xf,
+                type = data[0], // ignore [inconsistent between devices]
+                note = data[1], 
+                velocity = data[2];
+                
+        if (velocity) {
+            noteOn(note, velocity);
+        }
+        else{
+            noteOff(note, velocity);
+        }
+        log('data', data, 'cmd', cmd, 'channel', channel);
+        // logger(keyData, 'key data', data);
+    }
+
+    function onStateChange(event){
+        var port = event.port, state = port.state, name = port.name, type = port.type;
+        device.textContent = name.replace(/port.*/i, '');
+        showMIDIPorts(midi);
+        if(type == "input")
+            log("name", name, "port", port, "state", state);
+
+    }
+
+    function listInputs(inputs){
+        var input = inputs.value;
+        device.textContent = input.name.replace(/port.*/i, '');
+            log("Input port : [ type:'" + input.type + "' id: '" + input.id + 
+                    "' manufacturer: '" + input.manufacturer + "' name: '" + input.name + 
+                    "' version: '" + input.version + "']");
+    }
+
+    function noteOn(midiNote, velocity){
+        if (midiNote == 64) {
+            reset = true;
+        } else if(midiNote == 0) {
+            nbPersonnes += 1
+        } else if(midiNote == 1) {
+            nbPersonnes += 5
+        } else if(midiNote == 6) {
+            nbPersonnes -= 5
+        } else if(midiNote == 7) {
+            nbPersonnes -= 1
+        } else if(midiNote == 16) {
+            nbBars += 1;
+            barOuvertSong.play();
+        } else if(midiNote == 17) {
+            nbBars += 5;
+            barOuvertSong.play();
+        } else if(midiNote == 22) {
+            nbBars -= 5;
+            barFermeSong.play();
+        } else if(midiNote == 23) {
+            nbBars -= 1;
+            barFermeSong.play();
+        } else if(midiNote == 32) {
+            ampMouvementBar += 1
+        } else if(midiNote == 33) {
+            ampMouvementBar += 5
+        } else if(midiNote == 38) {
+            ampMouvementBar -= 5
+        } else if(midiNote == 39) {
+            ampMouvementBar -= 1
+        } else if(midiNote == 80) {
+            clearMap = !clearMap
+        } else if(midiNote == 96) {
+            deplacementGeo =!deplacementGeo
+        }
+        if (nbPersonnes > 150) {
+            nbPersonnes = 150;
+        } else if (nbPersonnes < 0) {
+            nbPersonnes = 0;
+        }
+        if (nbBars > 40) {
+            nbBars = 40
+        } else if (nbBars < 0) {
+            nbBars = 0
+        }
+        if (ampMouvementBar > 40) {
+            ampMouvementBar = 40
+        } else if (ampMouvementBar < 1) {
+            ampMouvementBar = 0
+        }
+        console.log('ON : LastTouchePressed : ',midiNote, 'pression de la touche : ', velocity);
+    }
+
+    function noteOff(midiNote, velocity){
+        console.log('OFF : LastTouchePressed : ',midiNote, 'pression de la touche : ', velocity);
+    }
+
+
+    function onMIDIFailure(e){
+        log("No access to MIDI devices or your browser doesn't support WebMIDI API. Please use WebMIDIAPIShim " + e);
+    }
+    
+    // MIDI utility functions
+    function showMIDIPorts(midiAccess){
+        var inputs = midiAccess.inputs,
+                outputs = midiAccess.outputs, 
+                html;
+        html = '<h4>MIDI Inputs:</h4><div class="info">';
+        inputs.forEach(function(port){
+            html += '<p>' + port.name + '<p>';
+            html += '<p class="small">connection: ' + port.connection + '</p>';
+            html += '<p class="small">state: ' + port.state + '</p>';
+            html += '<p class="small">manufacturer: ' + port.manufacturer + '</p>';
+            if(port.version){
+                html += '<p class="small">version: ' + port.version + '</p>';
+            }
+        });
+        deviceInfoInputs.innerHTML = html + '</div>';
+
+        html = '<h4>MIDI Outputs:</h4><div class="info">';
+        outputs.forEach(function(port){
+            html += '<p>' + port.name + '<br>';
+            html += '<p class="small">manufacturer: ' + port.manufacturer + '</p>';
+            if(port.version){
+                html += '<p class="small">version: ' + port.version + '</p>';
+            }
+        });
+        deviceInfoOutputs.innerHTML = html + '</div>';
+    }
+
+
+    // // utility functions
+    // function logger(container, label, data){
+    // 	console.log('LastTouchePressed : ',data[1], 'pression de la touche : ', data[2]);
+        
+    // 	messages = label + " [cmd: " + (data[0] >> 4) + ", type: " + data[0] + " , note: " + data[1] + " , velocity: " + data[2] + "]";
+    // 	container.textContent = messages;
+    // }
+
+})();
