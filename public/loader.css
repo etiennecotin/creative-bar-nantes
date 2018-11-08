@@ -42,4 +42,6 @@
 #white.display #fin {
     display: block;
     animation: slidein 6s ease;
+    width: 100%;
+    height: 100%;
 }

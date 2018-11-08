@@ -14,7 +14,7 @@ var colorR = 255;
 var colorG = 255;
 var colorB = 255;
 var personnes = [];
-var music = ['AlanWalkerFade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3', 'GALA - Freed from desire.mp3', 'Jain - Alright.mp3', 'Le Wanski - Bella Ciao.mp3', 'Lost Temple - Panda Dub.mp3', 'Martin Garrix  Brooks - Like I Do.mp3', 'MC Fioti - Bum Bum Tam Tam.mp3', 'OrelSan - San.mp3', 'White Town - Your Woman.mp3'];
+var music = ['AlanWalkerFade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Ed Sheeran - Shape Of You.mp3', 'GALA - Freed from desire.mp3', 'Jain - Alright.mp3', 'Le Wanski - Bella Ciao.mp3', 'Lost Temple - Panda Dub.mp3', 'Martin Garrix  Brooks - Like I Do.mp3', 'MC Fioti - Bum Bum Tam Tam.mp3', 'Ofenbach vs. Nick Waterhouse - Katchi.mp3', 'White Town - Your Woman.mp3'];
 var ouvertureBar;
 var ambiance;
 var decaps;
@@ -23,7 +23,7 @@ var reset = false;
 
 var nbParticules = 150;
 
-var heures = 9;
+var heures = 13;
 var minutes = 0;
 
 var nuit = false;
@@ -31,7 +31,7 @@ var opacity = 0;
 var tramPlay = 0;
 // var vitTemps = 333.332;
 // var vitTemps = 150.332;
-var vitTemps = 200;
+var vitTemps = 250;
 
 
 // Create a new Mappa instance.
@@ -472,6 +472,10 @@ function chrono() {
             nbPersonnes += 1
         } else if(midiNote == 1) {
             nbPersonnes += 5
+        } else if(midiNote == 2) {
+            nbPersonnes += 20
+        } else if(midiNote == 5) {
+            nbPersonnes -= 20
         } else if(midiNote == 6) {
             nbPersonnes -= 5
         } else if(midiNote == 7) {
