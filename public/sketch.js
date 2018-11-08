@@ -69,17 +69,24 @@ var barFermeSong;
 
 var nbBarsBefore;
 
+var iteration = 0;
+
+var white = false;
+var black = false;
+
 socket.on('nbParticules', function(val){
     nbPersonnes = val;
 });
 socket.on('nbBars', function(val){
     nbBarsBefore = nbBars;
     nbBars = val;
+    barOuvertSong.setVolume(0.3);
+    barFermeSong.setVolume(0.3);
     if(nbBars>nbBarsBefore){
         barOuvertSong.play();
-       }else if(nbBars<nbBarsBefore){
-           barFermeSong.play();
-       }
+   }else if(nbBars<nbBarsBefore){
+       barFermeSong.play();
+   }
 });
 socket.on('ampMouvementBar', function(val){
     ampMouvementBar = val;    
@@ -105,6 +112,18 @@ socket.on('deplacementGeo', function(val){
     deplacementGeo = val;
     console.log('deplacementGeo', deplacementGeo);
     
+});
+socket.on('white', function(val){
+    white = val;
+    iteration = 0;
+    console.log('white', white);
+
+});
+socket.on('black', function(val){
+    black = val;
+    iteration = 0;
+    console.log('black', black);
+
 });
 
 
@@ -171,6 +190,7 @@ function setup() {
     setInterval(chrono, vitTemps);
 }
 
+
 function draw() {
     // background(0);
     if (clearMap) {
@@ -194,8 +214,25 @@ function draw() {
             opacity = 0;
         }
         push();
-            fill('rgba(0,0,0, '+opacity+')')
-            rect(width/2, height/2, width, height);
+            // if (white){
+            //     fill('rgba(0,0,0, '+opacity+')')
+            //     rect(width/2, height/2, width, height);
+            // }
+            if (clearMap){
+                fill('rgba(0,0,0, '+opacity+')')
+                rect(width/2, height/2, width, height);
+                iteration = 0;
+            } else {
+                iteration++;
+                if (iteration <= 1){
+                    clear()
+                    if (white){
+                        fill('rgba(255,255,255, 1)');
+                        // fill('rgba(255,255,255, 0)');
+                        rect(width/2, height/2, width, height);
+                    }
+                }
+            }
         pop();
         
     } else {//nuit
@@ -203,8 +240,22 @@ function draw() {
             opacity += 0.005;
         }
         push();
-            fill('rgba(0,0,0, '+opacity+')')
-            rect(width/2, height/2, width, height);
+            if (clearMap){
+                fill('rgba(0,0,0, '+opacity+')')
+                rect(width/2, height/2, width, height);
+                iteration = 0;
+            } else {
+                iteration++;
+                if (iteration <= 1){
+                    clear()
+                    if (black){
+                        fill('rgba(0,0,0, 1)')
+                    } else {
+                        fill('rgba(0,0,0, 0.75)')
+                    }
+                    rect(width/2, height/2, width, height);
+                }
+            }
         pop();
     }
     tramPlay += 1
