@@ -23,14 +23,16 @@ var reset = false;
 
 var nbParticules = 150;
 
-var heures = 8;
+var heures = 9;
 var minutes = 0;
 
 var nuit = false;
 var opacity = 0;
 var tramPlay = 0;
 // var vitTemps = 333.332;
-var vitTemps = 150.332;
+// var vitTemps = 150.332;
+var vitTemps = 200;
+
 
 // Create a new Mappa instance.
 let myMap;
@@ -498,6 +500,14 @@ function chrono() {
             clearMap = !clearMap
         } else if(midiNote == 96) {
             deplacementGeo =!deplacementGeo
+        } else if(midiNote == 112) {
+            white = !white;
+            iteration = 0;
+        } else if(midiNote == 113) {
+            black = !black;
+            iteration = 0;
+        }  else if(midiNote == 119) {
+            document.getElementById('white').classList.add('display');
         }
         if (nbPersonnes > 150) {
             nbPersonnes = 150;
