@@ -85,8 +85,9 @@ class Bar {
         colorG = this.g;
         colorB = this.b;
         rect(this.coor.x, this.coor.y, this.l+rms*ampMouvementBar, this.l+rms*ampMouvementBar);
-        this.music.setVolume(1);
+        this.music.setVolume(0.3);
         if (!this.music._playing) {
+            this.music.setVolume(1,1);
             this.music.play();
         }
         pop();
@@ -97,7 +98,7 @@ class Bar {
         // console.log('name', this.text, 'this.music._playing', this.music._playing);
         if (this.music._playing) {
             // console.log('Music stop bar :', this.text, 'this.music._playing', this.music._playing);
-            this.music.setVolume(0);
+            this.music.setVolume(0, 0.5);
         }
         pop();
     }
