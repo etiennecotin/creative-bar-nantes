@@ -25,6 +25,7 @@
             this.clear = true;
             this.white = false;
             this.black = false;
+            this.barRotate = false;
             this.deplacementGeo = false;
             this.reset = function() {
                 socket.emit('reset', true);
@@ -45,6 +46,7 @@
             var clear_controller = gui.add(gui_param, 'clear');
             var white_controller = gui.add(gui_param, 'white');
             var black_controller = gui.add(gui_param, 'black');
+            var barRotate_controller = gui.add(gui_param, 'barRotate');
             var deplacementGeo_controller = gui.add(gui_param, 'deplacementGeo');
 
             particules_controller.onChange(function(value){
@@ -69,6 +71,9 @@
 
             black_controller.onChange(function(value){
                 socket.emit('black', value);
+            });
+            barRotate_controller.onChange(function(value){
+                socket.emit('barRotate', value);
             });
             deplacementGeo_controller.onChange(function(value){
                 socket.emit('deplacementGeo', value);

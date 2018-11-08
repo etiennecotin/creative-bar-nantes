@@ -75,6 +75,7 @@ var iteration = 0;
 
 var white = false;
 var black = false;
+var barwtf = false;
 
 socket.on('nbParticules', function(val){
     nbPersonnes = val;
@@ -127,13 +128,21 @@ socket.on('black', function(val){
     console.log('black', black);
 
 });
+socket.on('barRotate', function(val){
+    barRotate = val;
+    // console.log('barwtf', black);
+
+});
 
 
 /*if(ouvert==false){
         barOuvertSong.play();
             ouvert=true;
         }*/
-
+var side = 150;
+var angle = 0;
+var pos;
+var barRotate = false;
 
 function preload() {
     tram = loadSound('tram.mp3');
@@ -190,8 +199,16 @@ function setup() {
     });
 
     setInterval(chrono, vitTemps);
+
+    pos = p5.Vector.fromAngle(0);
+    setRadius();
 }
 
+function setRadius() {
+    let m = min(windowWidth, windowHeight);
+    var radius = m/2-side*0.6;
+    pos.setMag(radius);
+}
 
 function draw() {
     // background(0);
