@@ -14,7 +14,7 @@ var colorR = 255;
 var colorG = 255;
 var colorB = 255;
 var personnes = [];
-var music = ['AlanWalkerFade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Fatal Bazooka feat. Vitoo.mp3', 'GALA - Freed from desire.mp3', 'Jain - Alright.mp3', 'Le Wanski - Bella Ciao.mp3', 'Lost Temple - Panda Dub.mp3', 'Martin Garrix  Brooks - Like I Do.mp3', 'MC Fioti - Bum Bum Tam Tam.mp3', 'OrelSan - San.mp3', 'White Town - Your Woman.mp3'];
+var music = ['AlanWalkerFade.mp3', 'Cartoon - On  On.mp3', 'DEAF KEV - Invincible.mp3', 'Ed Sheeran - Shape Of You.mp3', 'GALA - Freed from desire.mp3', 'Jain - Alright.mp3', 'Le Wanski - Bella Ciao.mp3', 'Lost Temple - Panda Dub.mp3', 'Martin Garrix  Brooks - Like I Do.mp3', 'MC Fioti - Bum Bum Tam Tam.mp3', 'Ofenbach vs. Nick Waterhouse - Katchi.mp3', 'White Town - Your Woman.mp3'];
 var ouvertureBar;
 var ambiance;
 var decaps;
@@ -23,14 +23,16 @@ var reset = false;
 
 var nbParticules = 150;
 
-var heures = 8;
+var heures = 14;
 var minutes = 0;
 
 var nuit = false;
 var opacity = 0;
 var tramPlay = 0;
 // var vitTemps = 333.332;
-var vitTemps = 150.332;
+// var vitTemps = 150.332;
+var vitTemps = 250;
+
 
 // Create a new Mappa instance.
 let myMap;
@@ -69,20 +71,28 @@ var barFermeSong;
 
 var nbBarsBefore;
 
+var iteration = 0;
+
+var white = false;
+var black = false;
+var barwtf = false;
+
 socket.on('nbParticules', function(val){
     nbPersonnes = val;
 });
 socket.on('nbBars', function(val){
     nbBarsBefore = nbBars;
     nbBars = val;
+    barOuvertSong.setVolume(0.3);
+    barFermeSong.setVolume(0.3);
     if(nbBars>nbBarsBefore){
         barOuvertSong.play();
-       }else if(nbBars<nbBarsBefore){
-           barFermeSong.play();
-       }
+   }else if(nbBars<nbBarsBefore){
+       barFermeSong.play();
+   }
 });
 socket.on('ampMouvementBar', function(val){
-    ampMouvementBar = val;
+    ampMouvementBar = val;    
 });
 socket.on('playSound', function(val){
     playSound = val;
@@ -98,9 +108,30 @@ socket.on('reset', function(val){
 });
 socket.on('clear', function(val){
     clearMap = val;
+    console.log('clear', clearMap);
+    
 });
 socket.on('deplacementGeo', function(val){
     deplacementGeo = val;
+    console.log('deplacementGeo', deplacementGeo);
+    
+});
+socket.on('white', function(val){
+    white = val;
+    iteration = 0;
+    console.log('white', white);
+
+});
+socket.on('black', function(val){
+    black = val;
+    iteration = 0;
+    console.log('black', black);
+
+});
+socket.on('barRotate', function(val){
+    barRotate = val;
+    // console.log('barwtf', black);
+
 });
 
 
@@ -108,7 +139,10 @@ socket.on('deplacementGeo', function(val){
         barOuvertSong.play();
             ouvert=true;
         }*/
-
+var side = 150;
+var angle = 0;
+var pos;
+var barRotate = false;
 
 function preload() {
     tram = loadSound('tram.mp3');
@@ -165,6 +199,15 @@ function setup() {
     });
 
     setInterval(chrono, vitTemps);
+
+    pos = p5.Vector.fromAngle(0);
+    setRadius();
+}
+
+function setRadius() {
+    let m = min(windowWidth, windowHeight);
+    var radius = m/2-side*0.6;
+    pos.setMag(radius);
 }
 
 function draw() {
@@ -190,8 +233,25 @@ function draw() {
             opacity = 0;
         }
         push();
-            fill('rgba(0,0,0, '+opacity+')')
-            rect(width/2, height/2, width, height);
+            // if (white){
+            //     fill('rgba(0,0,0, '+opacity+')')
+            //     rect(width/2, height/2, width, height);
+            // }
+            if (clearMap){
+                fill('rgba(0,0,0, '+opacity+')')
+                rect(width/2, height/2, width, height);
+                iteration = 0;
+            } else {
+                iteration++;
+                if (iteration <= 1){
+                    clear()
+                    if (white){
+                        fill('rgba(255,255,255, 1)');
+                        // fill('rgba(255,255,255, 0)');
+                        rect(width/2, height/2, width, height);
+                    }
+                }
+            }
         pop();
         
     } else {//nuit
@@ -199,12 +259,26 @@ function draw() {
             opacity += 0.005;
         }
         push();
-            fill('rgba(0,0,0, '+opacity+')')
-            rect(width/2, height/2, width, height);
+            if (clearMap){
+                fill('rgba(0,0,0, '+opacity+')')
+                rect(width/2, height/2, width, height);
+                iteration = 0;
+            } else {
+                iteration++;
+                if (iteration <= 1){
+                    clear()
+                    if (black){
+                        fill('rgba(0,0,0, 1)')
+                    } else {
+                        fill('rgba(0,0,0, 0.75)')
+                    }
+                    rect(width/2, height/2, width, height);
+                }
+            }
         pop();
     }
     tramPlay += 1
-    tram.setVolume(0.4);
+    tram.setVolume(0.3);
        if (heures > 6 && heures < 12) {
            if (tramPlay%1100 == 0) {
                console.log('tram play 6-12');
@@ -340,3 +414,188 @@ function mouseReleased() {
 function chrono() {
     this.minutes++;
 }
+
+
+/****** TEST  ******/
+(function(){
+    var log = console.log.bind(console), keyData = document.getElementById('key_data'), 
+            deviceInfoInputs = document.getElementById('inputs'), deviceInfoOutputs = document.getElementById('outputs'), 
+            device = document.querySelector('.device-name'), midi;
+
+    // request MIDI access
+    if(navigator.requestMIDIAccess){
+        navigator.requestMIDIAccess({sysex: false}).then(onMIDISuccess, onMIDIFailure);
+    }
+    else {
+        alert("No MIDI support in your browser.");
+    }
+
+    // midi functions
+    function onMIDISuccess(midiAccess){
+        midi = midiAccess;
+        var inputs = midi.inputs.values();
+        // loop through all inputs
+        for(var input = inputs.next(); input && !input.done; input = inputs.next()){
+            // listen for midi messages
+            input.value.onmidimessage = onMIDIMessage;
+
+            listInputs(input);
+        }
+        // listen for connect/disconnect message
+        midi.onstatechange = onStateChange;
+
+        showMIDIPorts(midi);
+    }
+
+    function onMIDIMessage(event){
+        var data = event.data, 
+                cmd = data[0] >> 4,
+                channel = data[0] & 0xf,
+                type = data[0], // ignore [inconsistent between devices]
+                note = data[1], 
+                velocity = data[2];
+                
+        if (velocity) {
+            noteOn(note, velocity);
+        }
+        else{
+            noteOff(note, velocity);
+        }
+        log('data', data, 'cmd', cmd, 'channel', channel);
+        // logger(keyData, 'key data', data);
+    }
+
+    function onStateChange(event){
+        var port = event.port, state = port.state, name = port.name, type = port.type;
+        device.textContent = name.replace(/port.*/i, '');
+        showMIDIPorts(midi);
+        if(type == "input")
+            log("name", name, "port", port, "state", state);
+
+    }
+
+    function listInputs(inputs){
+        var input = inputs.value;
+        device.textContent = input.name.replace(/port.*/i, '');
+            log("Input port : [ type:'" + input.type + "' id: '" + input.id + 
+                    "' manufacturer: '" + input.manufacturer + "' name: '" + input.name + 
+                    "' version: '" + input.version + "']");
+    }
+
+    function noteOn(midiNote, velocity){
+        if (midiNote == 64) {
+            reset = true;
+        } else if(midiNote == 0) {
+            nbPersonnes += 1
+        } else if(midiNote == 1) {
+            nbPersonnes += 5
+        } else if(midiNote == 2) {
+            nbPersonnes += 20
+        } else if(midiNote == 5) {
+            nbPersonnes -= 20
+        } else if(midiNote == 6) {
+            nbPersonnes -= 5
+        } else if(midiNote == 7) {
+            nbPersonnes -= 1
+        } else if(midiNote == 16) {
+            nbBars += 1;
+            barOuvertSong.play();
+        } else if(midiNote == 17) {
+            nbBars += 5;
+            barOuvertSong.play();
+        } else if(midiNote == 22) {
+            nbBars -= 5;
+            barFermeSong.play();
+        } else if(midiNote == 23) {
+            nbBars -= 1;
+            barFermeSong.play();
+        } else if(midiNote == 32) {
+            ampMouvementBar += 1
+        } else if(midiNote == 33) {
+            ampMouvementBar += 5
+        } else if(midiNote == 38) {
+            ampMouvementBar -= 5
+        } else if(midiNote == 39) {
+            ampMouvementBar -= 1
+        } else if(midiNote == 48) {
+            barRotate = !barRotate;
+        } else if(midiNote == 49) {
+            // ampMouvementBar -= 1
+        } else if(midiNote == 80) {
+            clearMap = !clearMap
+        } else if(midiNote == 96) {
+            deplacementGeo =!deplacementGeo
+        } else if(midiNote == 112) {
+            white = !white;
+            iteration = 0;
+        } else if(midiNote == 113) {
+            black = !black;
+            iteration = 0;
+        }  else if(midiNote == 119) {
+            document.getElementById('white').classList.add('display');
+        }
+        if (nbPersonnes > 150) {
+            nbPersonnes = 150;
+        } else if (nbPersonnes < 0) {
+            nbPersonnes = 0;
+        }
+        if (nbBars > 40) {
+            nbBars = 40
+        } else if (nbBars < 0) {
+            nbBars = 0
+        }
+        if (ampMouvementBar > 40) {
+            ampMouvementBar = 40
+        } else if (ampMouvementBar < 1) {
+            ampMouvementBar = 0
+        }
+        console.log('ON : LastTouchePressed : ',midiNote, 'pression de la touche : ', velocity);
+    }
+
+    function noteOff(midiNote, velocity){
+        console.log('OFF : LastTouchePressed : ',midiNote, 'pression de la touche : ', velocity);
+    }
+
+
+    function onMIDIFailure(e){
+        log("No access to MIDI devices or your browser doesn't support WebMIDI API. Please use WebMIDIAPIShim " + e);
+    }
+    
+    // MIDI utility functions
+    function showMIDIPorts(midiAccess){
+        var inputs = midiAccess.inputs,
+                outputs = midiAccess.outputs, 
+                html;
+        html = '<h4>MIDI Inputs:</h4><div class="info">';
+        inputs.forEach(function(port){
+            html += '<p>' + port.name + '<p>';
+            html += '<p class="small">connection: ' + port.connection + '</p>';
+            html += '<p class="small">state: ' + port.state + '</p>';
+            html += '<p class="small">manufacturer: ' + port.manufacturer + '</p>';
+            if(port.version){
+                html += '<p class="small">version: ' + port.version + '</p>';
+            }
+        });
+        deviceInfoInputs.innerHTML = html + '</div>';
+
+        html = '<h4>MIDI Outputs:</h4><div class="info">';
+        outputs.forEach(function(port){
+            html += '<p>' + port.name + '<br>';
+            html += '<p class="small">manufacturer: ' + port.manufacturer + '</p>';
+            if(port.version){
+                html += '<p class="small">version: ' + port.version + '</p>';
+            }
+        });
+        deviceInfoOutputs.innerHTML = html + '</div>';
+    }
+
+
+    // // utility functions
+    // function logger(container, label, data){
+    // 	console.log('LastTouchePressed : ',data[1], 'pression de la touche : ', data[2]);
+        
+    // 	messages = label + " [cmd: " + (data[0] >> 4) + ", type: " + data[0] + " , note: " + data[1] + " , velocity: " + data[2] + "]";
+    // 	container.textContent = messages;
+    // }
+
+})();

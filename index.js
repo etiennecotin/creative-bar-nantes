@@ -44,6 +44,18 @@ io.on('connection', function(socket){
         // console.log('reset: ' + msg);
         io.emit("clear", msg);
     });
+    socket.on('white', function(msg){
+        // console.log('reset: ' + msg);
+        io.emit("white", msg);
+    });
+    socket.on('black', function(msg){
+        // console.log('reset: ' + msg);
+        io.emit("black", msg);
+    });
+    socket.on('barRotate', function(msg){
+        // console.log('reset: ' + msg);
+        io.emit("barRotate", msg);
+    });
     socket.on('deplacementGeo', function(msg){
         // console.log('reset: ' + msg);
         io.emit("deplacementGeo", msg);

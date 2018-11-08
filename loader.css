@@ -9,3 +9,14 @@
     justify-content: center;
     align-items: center;
 }
+#fin {
+    display: none;
+}
+
+#fin.display {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99999;
+}
