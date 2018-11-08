@@ -23,7 +23,7 @@ var reset = false;
 
 var nbParticules = 150;
 
-var heures = 13;
+var heures = 14;
 var minutes = 0;
 
 var nuit = false;
@@ -278,7 +278,7 @@ function draw() {
         pop();
     }
     tramPlay += 1
-    tram.setVolume(0.4);
+    tram.setVolume(0.3);
        if (heures > 6 && heures < 12) {
            if (tramPlay%1100 == 0) {
                console.log('tram play 6-12');
@@ -518,7 +518,7 @@ function chrono() {
         } else if(midiNote == 39) {
             ampMouvementBar -= 1
         } else if(midiNote == 48) {
-            // ampMouvementBar -= 1
+            barRotate = !barRotate;
         } else if(midiNote == 49) {
             // ampMouvementBar -= 1
         } else if(midiNote == 80) {
