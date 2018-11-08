@@ -500,6 +500,10 @@ function chrono() {
             ampMouvementBar -= 5
         } else if(midiNote == 39) {
             ampMouvementBar -= 1
+        } else if(midiNote == 48) {
+            // ampMouvementBar -= 1
+        } else if(midiNote == 49) {
+            // ampMouvementBar -= 1
         } else if(midiNote == 80) {
             clearMap = !clearMap
         } else if(midiNote == 96) {
